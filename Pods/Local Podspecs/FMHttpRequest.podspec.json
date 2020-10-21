@@ -1,0 +1,25 @@
+{
+  "name": "FMHttpRequest",
+  "version": "0.0.4",
+  "summary": "简单的网络抽象层",
+  "description": "简单的网络抽象层，方便使用，支持自定义JSON解析，链式调用",
+  "homepage": "http://fmyang.github.io/",
+  "license": "MIT",
+  "authors": {
+    "yangfangming": "yangfangming@tuandai.com"
+  },
+  "source": {
+    "git": "FMShortVideo/",
+    "tag": "0.0.4"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "requires_arc": true,
+  "source_files": "FMHttpRequest/*.{h,m,swift,bundle,json}",
+  "dependencies": {
+    "AFNetworking": [
+
+    ]
+  }
+}
