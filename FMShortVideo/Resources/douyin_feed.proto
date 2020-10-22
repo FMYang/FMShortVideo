@@ -1,0 +1,693 @@
+message "author" {
+  required double status_code = 0
+  required double min_cursor = 1
+  required double max_cursor = 2
+  required double has_more = 3
+
+  message AWEME_LIST {
+    required string aweme_id = 0
+    required string desc = 1
+    required double create_time = 2
+
+    message AUTHOR {
+      required string uid = 0
+      required string short_id = 1
+      required string nickname = 2
+      required double gender = 3
+      required string signature = 4
+
+      message AVATAR_LARGER {
+        required string uri = 0
+        repeated string url_list = 1
+        required double width = 2
+        required double height = 3
+      }
+
+      required AVATAR_LARGER avatar_larger = 5
+
+      message AVATAR_THUMB {
+        required string uri = 0
+        repeated string url_list = 1
+        required double width = 2
+        required double height = 3
+      }
+
+      required AVATAR_THUMB avatar_thumb = 6
+
+      message AVATAR_MEDIUM {
+        required string uri = 0
+        repeated string url_list = 1
+        required double width = 2
+        required double height = 3
+      }
+
+      required AVATAR_MEDIUM avatar_medium = 7
+      required string birthday = 8
+      required bool is_verified = 9
+      required double follow_status = 10
+      required double aweme_count = 11
+      required double following_count = 12
+      required double follower_count = 13
+      required double favoriting_count = 14
+      required double total_favorited = 15
+      required bool is_block = 16
+      required bool hide_search = 17
+      required double constellation = 18
+      required string location = 19
+      required bool hide_location = 20
+      required string weibo_verify = 21
+      required string custom_verify = 22
+      required string unique_id = 23
+      required string bind_phone = 24
+      required double special_lock = 25
+      required double need_recommend = 26
+      required bool is_binded_weibo = 27
+      required string weibo_name = 28
+      required string weibo_schema = 29
+      required string weibo_url = 30
+      required bool story_open = 31
+      required double story_count = 32
+      required bool has_facebook_token = 33
+      required bool has_twitter_token = 34
+      required double fb_expire_time = 35
+      required double tw_expire_time = 36
+      required bool has_youtube_token = 37
+      required double youtube_expire_time = 38
+      required double room_id = 39
+      required double live_verify = 40
+      required double authority_status = 41
+      required string verify_info = 42
+      required double shield_follow_notice = 43
+      required double shield_digg_notice = 44
+      required double shield_comment_notice = 45
+      required string school_name = 46
+      required string school_poi_id = 47
+      required double school_type = 48
+
+      message SHARE_INFO {
+        required string share_url = 0
+        required string share_weibo_desc = 1
+        required string share_desc = 2
+        required string share_title = 3
+
+        message SHARE_QRCODE_URL {
+          required string uri = 0
+          repeated string url_list = 1
+          required double width = 2
+          required double height = 3
+        }
+
+        required SHARE_QRCODE_URL share_qrcode_url = 4
+        required string share_title_myself = 5
+        required string share_title_other = 6
+      }
+
+      required SHARE_INFO share_info = 49
+      required bool with_commerce_entry = 50
+      required double verification_type = 51
+      required string enterprise_verify_reason = 52
+      required bool is_ad_fake = 53
+
+      message FOLLOWERS_DETAIL {
+      }
+
+      required FOLLOWERS_DETAIL followers_detail = 54
+      required string region = 55
+      required string account_region = 56
+      required double sync_to_toutiao = 57
+      required double commerce_user_level = 58
+      required double live_agreement = 59
+
+      message PLATFORM_SYNC_INFO {
+      }
+
+      required PLATFORM_SYNC_INFO platform_sync_info = 60
+      required bool with_shop_entry = 61
+      required bool is_discipline_member = 62
+      required double secret = 63
+      required bool has_orders = 64
+      required bool prevent_download = 65
+      required bool show_image_bubble = 66
+      repeated undefined geofencing = 67
+      required double unique_id_modify_time = 68
+
+      message VIDEO_ICON {
+        required string uri = 0
+        repeated undefined url_list = 1
+        required double width = 2
+        required double height = 3
+      }
+
+      required VIDEO_ICON video_icon = 69
+      required string ins_id = 70
+      required string google_account = 71
+      required string youtube_channel_id = 72
+      required string youtube_channel_title = 73
+      required double apple_account = 74
+      required bool with_dou_entry = 75
+      required bool with_fusion_shop_entry = 76
+      required bool is_phone_binded = 77
+      required bool accept_private_policy = 78
+      required string twitter_id = 79
+      required string twitter_name = 80
+      required bool user_canceled = 81
+      required bool has_email = 82
+      required double live_agreement_time = 83
+      required double status = 84
+      required double create_time = 85
+      required string avatar_uri = 86
+      required double follower_status = 87
+      required double neiguang_shield = 88
+      required double comment_setting = 89
+      required double duet_setting = 90
+      required double reflow_page_gid = 91
+      required double reflow_page_uid = 92
+      required double user_rate = 93
+      required double download_setting = 94
+      required double download_prompt_ts = 95
+      required double react_setting = 96
+      required bool live_commerce = 97
+
+      message COVER_URL {
+        required string uri = 0
+        repeated string url_list = 1
+        required double width = 2
+        required double height = 3
+      }
+
+      repeated COVER_URL cover_url = 98
+      required string language = 99
+      required bool has_insights = 100
+      required string share_qrcode_uri = 101
+
+      message ITEM_LIST {
+      }
+
+      required ITEM_LIST item_list = 102
+      required double user_mode = 103
+      required double user_period = 104
+      required bool has_unread_story = 105
+
+      message NEW_STORY_COVER {
+      }
+
+      required NEW_STORY_COVER new_story_cover = 106
+      required bool is_star = 107
+      required string cv_level = 108
+
+      message TYPE_LABEL {
+      }
+
+      required TYPE_LABEL type_label = 109
+
+      message AD_COVER_URL {
+      }
+
+      required AD_COVER_URL ad_cover_url = 110
+      required double comment_filter_status = 111
+
+      message AVATAR_168X168 {
+        required string uri = 0
+        repeated string url_list = 1
+        required double width = 2
+        required double height = 3
+      }
+
+      required AVATAR_168X168 avatar_168x168 = 112
+
+      message AVATAR_300X300 {
+        required string uri = 0
+        repeated string url_list = 1
+        required double width = 2
+        required double height = 3
+      }
+
+      required AVATAR_300X300 avatar_300x300 = 113
+
+      message RELATIVE_USERS {
+      }
+
+      required RELATIVE_USERS relative_users = 114
+
+      message CHA_LIST {
+      }
+
+      required CHA_LIST cha_list = 115
+      required string sec_uid = 116
+    }
+
+    required AUTHOR author = 3
+
+    message MUSIC {
+      required double id = 0
+      required string id_str = 1
+      required string title = 2
+      required string author = 3
+      required string album = 4
+
+      message COVER_HD {
+        required string uri = 0
+        repeated string url_list = 1
+        required double width = 2
+        required double height = 3
+      }
+
+      required COVER_HD cover_hd = 5
+
+      message COVER_LARGE {
+        required string uri = 0
+        repeated string url_list = 1
+        required double width = 2
+        required double height = 3
+      }
+
+      required COVER_LARGE cover_large = 6
+
+      message COVER_MEDIUM {
+        required string uri = 0
+        repeated string url_list = 1
+        required double width = 2
+        required double height = 3
+      }
+
+      required COVER_MEDIUM cover_medium = 7
+
+      message COVER_THUMB {
+        required string uri = 0
+        repeated string url_list = 1
+        required double width = 2
+        required double height = 3
+      }
+
+      required COVER_THUMB cover_thumb = 8
+
+      message PLAY_URL {
+        required string uri = 0
+        repeated string url_list = 1
+        required double width = 2
+        required double height = 3
+      }
+
+      required PLAY_URL play_url = 9
+      required string schema_url = 10
+      required double source_platform = 11
+      required double start_time = 12
+      required double end_time = 13
+      required double duration = 14
+      required string extra = 15
+      required double user_count = 16
+
+      message POSITION {
+      }
+
+      required POSITION position = 17
+      required double collect_stat = 18
+      required double status = 19
+      required string offline_desc = 20
+      required string owner_id = 21
+      required string owner_nickname = 22
+      required bool is_original = 23
+      required string mid = 24
+      required double binded_challenge_id = 25
+      required bool redirect = 26
+      required bool is_restricted = 27
+      required bool author_deleted = 28
+      required bool is_del_video = 29
+      required bool is_video_self_see = 30
+      required string owner_handle = 31
+
+      message AUTHOR_POSITION {
+      }
+
+      required AUTHOR_POSITION author_position = 32
+      required bool prevent_download = 33
+
+      message UNSHELVE_COUNTRIES {
+      }
+
+      required UNSHELVE_COUNTRIES unshelve_countries = 34
+
+      message EXTERNAL_SONG_INFO {
+      }
+
+      required EXTERNAL_SONG_INFO external_song_info = 35
+      required string sec_uid = 36
+    }
+
+    required MUSIC music = 4
+
+    message CHA_LIST {
+      required string cid = 0
+      required string cha_name = 1
+      required string desc = 2
+      required string schema = 3
+
+      message AUTHOR {
+
+        message FOLLOWERS_DETAIL {
+        }
+
+        required FOLLOWERS_DETAIL followers_detail = 0
+
+        message PLATFORM_SYNC_INFO {
+        }
+
+        required PLATFORM_SYNC_INFO platform_sync_info = 1
+
+        message GEOFENCING {
+        }
+
+        required GEOFENCING geofencing = 2
+
+        message COVER_URL {
+        }
+
+        required COVER_URL cover_url = 3
+
+        message ITEM_LIST {
+        }
+
+        required ITEM_LIST item_list = 4
+
+        message NEW_STORY_COVER {
+        }
+
+        required NEW_STORY_COVER new_story_cover = 5
+
+        message TYPE_LABEL {
+        }
+
+        required TYPE_LABEL type_label = 6
+
+        message AD_COVER_URL {
+        }
+
+        required AD_COVER_URL ad_cover_url = 7
+
+        message RELATIVE_USERS {
+        }
+
+        required RELATIVE_USERS relative_users = 8
+
+        message CHA_LIST {
+        }
+
+        required CHA_LIST cha_list = 9
+      }
+
+      required AUTHOR author = 4
+      required double user_count = 5
+
+      message SHARE_INFO {
+        required string share_url = 0
+        required string share_weibo_desc = 1
+        required string share_desc = 2
+        required string share_title = 3
+        required double bool_persist = 4
+        required string share_title_myself = 5
+        required string share_title_other = 6
+        required string share_signature_url = 7
+        required string share_signature_desc = 8
+        required string share_quote = 9
+      }
+
+      required SHARE_INFO share_info = 6
+      repeated undefined connect_music = 7
+      required double type = 8
+      required double sub_type = 9
+      required bool is_pgcshow = 10
+      required double collect_stat = 11
+      required double is_challenge = 12
+    }
+
+    repeated CHA_LIST cha_list = 5
+
+    message VIDEO {
+
+      message PLAY_ADDR {
+        required string uri = 0
+        repeated string url_list = 1
+        required double width = 2
+        required double height = 3
+        required string url_key = 4
+      }
+
+      required PLAY_ADDR play_addr = 0
+
+      message COVER {
+        required string uri = 0
+        repeated string url_list = 1
+        required double width = 2
+        required double height = 3
+      }
+
+      required COVER cover = 1
+      required double height = 2
+      required double width = 3
+
+      message DYNAMIC_COVER {
+        required string uri = 0
+        repeated string url_list = 1
+        required double width = 2
+        required double height = 3
+      }
+
+      required DYNAMIC_COVER dynamic_cover = 4
+
+      message ORIGIN_COVER {
+        required string uri = 0
+        repeated string url_list = 1
+        required double width = 2
+        required double height = 3
+      }
+
+      required ORIGIN_COVER origin_cover = 5
+      required string ratio = 6
+
+      message DOWNLOAD_ADDR {
+        required string uri = 0
+        repeated string url_list = 1
+        required double width = 2
+        required double height = 3
+      }
+
+      required DOWNLOAD_ADDR download_addr = 7
+      required bool has_watermark = 8
+
+      message BIT_RATE {
+        required string gear_name = 0
+        required double quality_type = 1
+        required double bit_rate = 2
+
+        message PLAY_ADDR {
+          required string uri = 0
+          repeated string url_list = 1
+          required double width = 2
+          required double height = 3
+          required string url_key = 4
+        }
+
+        required PLAY_ADDR play_addr = 3
+        required double is_h265 = 4
+      }
+
+      repeated BIT_RATE bit_rate = 9
+      required double duration = 10
+      required double is_h265 = 11
+    }
+
+    required VIDEO video = 6
+    required string share_url = 7
+    required double user_digged = 8
+
+    message STATISTICS {
+      required string aweme_id = 0
+      required double comment_count = 1
+      required double digg_count = 2
+      required double download_count = 3
+      required double play_count = 4
+      required double share_count = 5
+      required double forward_count = 6
+    }
+
+    required STATISTICS statistics = 9
+
+    message STATUS {
+      required string aweme_id = 0
+      required bool is_delete = 1
+      required bool allow_share = 2
+      required bool allow_comment = 3
+      required bool is_private = 4
+      required bool with_goods = 5
+      required double private_status = 6
+      required bool with_fusion_goods = 7
+      required bool in_reviewing = 8
+      required double reviewed = 9
+      required bool self_see = 10
+      required bool is_prohibited = 11
+      required double download_status = 12
+    }
+
+    required STATUS status = 10
+    required double rate = 11
+
+    message TEXT_EXTRA {
+      required double start = 0
+      required double end = 1
+      required double type = 2
+      required string hashtag_name = 3
+      required string hashtag_id = 4
+      required bool is_commerce = 5
+    }
+
+    repeated TEXT_EXTRA text_extra = 12
+    required double is_top = 13
+
+    message LABEL_TOP {
+      required string uri = 0
+      repeated string url_list = 1
+      required double width = 2
+      required double height = 3
+    }
+
+    required LABEL_TOP label_top = 14
+
+    message SHARE_INFO {
+      required string share_url = 0
+      required string share_weibo_desc = 1
+      required string share_desc = 2
+      required string share_title = 3
+      required double bool_persist = 4
+      required string share_title_myself = 5
+      required string share_title_other = 6
+      required string share_link_desc = 7
+      required string share_signature_url = 8
+      required string share_signature_desc = 9
+      required string share_quote = 10
+      required string whatsapp_desc = 11
+    }
+
+    required SHARE_INFO share_info = 15
+    required string distance = 16
+    repeated undefined video_labels = 17
+    required bool is_vr = 18
+    required bool is_ads = 19
+    required double duration = 20
+    required double aweme_type = 21
+    required bool is_fantasy = 22
+    required bool cmt_swt = 23
+
+    message IMAGE_INFOS {
+    }
+
+    required IMAGE_INFOS image_infos = 24
+
+    message RISK_INFOS {
+      required bool vote = 0
+      required bool warn = 1
+      required bool risk_sink = 2
+      required double type = 3
+      required string content = 4
+    }
+
+    required RISK_INFOS risk_infos = 25
+    required bool is_relieve = 26
+    required string sort_label = 27
+
+    message POSITION {
+    }
+
+    required POSITION position = 28
+
+    message UNIQID_POSITION {
+    }
+
+    required UNIQID_POSITION uniqid_position = 29
+
+    message COMMENT_LIST {
+    }
+
+    required COMMENT_LIST comment_list = 30
+    required double author_user_id = 31
+    required double bodydance_score = 32
+    repeated undefined geofencing = 33
+    required double is_hash_tag = 34
+    required bool is_pgcshow = 35
+    required string region = 36
+    repeated undefined video_text = 37
+    required double vr_type = 38
+    required double collect_stat = 39
+
+    message LABEL_TOP_TEXT {
+    }
+
+    required LABEL_TOP_TEXT label_top_text = 40
+    repeated undefined promotions = 41
+    required string group_id = 42
+    required bool prevent_download = 43
+
+    message NICKNAME_POSITION {
+    }
+
+    required NICKNAME_POSITION nickname_position = 44
+
+    message CHALLENGE_POSITION {
+    }
+
+    required CHALLENGE_POSITION challenge_position = 45
+    required double item_comment_settings = 46
+    required bool with_promotional_music = 47
+
+    message XIGUA_TASK {
+      required bool is_xigua_task = 0
+    }
+
+    required XIGUA_TASK xigua_task = 48
+
+    message LONG_VIDEO {
+    }
+
+    required LONG_VIDEO long_video = 49
+    required double item_duet = 50
+    required double item_react = 51
+    required string desc_language = 52
+
+    message INTERACTION_STICKERS {
+    }
+
+    required INTERACTION_STICKERS interaction_stickers = 53
+    required string misc_info = 54
+
+    message ORIGIN_COMMENT_IDS {
+    }
+
+    required ORIGIN_COMMENT_IDS origin_comment_ids = 55
+
+    message COMMERCE_CONFIG_DATA {
+    }
+
+    required COMMERCE_CONFIG_DATA commerce_config_data = 56
+  }
+
+  repeated AWEME_LIST aweme_list = 4
+  required double home_model = 5
+  required double refresh_clear = 6
+
+  message EXTRA {
+    required double now = 0
+
+    message FATAL_ITEM_IDS {
+    }
+
+    required FATAL_ITEM_IDS fatal_item_ids = 1
+  }
+
+  required EXTRA extra = 7
+
+  message LOG_PB {
+    required string impr_id = 0
+  }
+
+  required LOG_PB log_pb = 8
+  repeated undefined preload_ads = 9
+}
