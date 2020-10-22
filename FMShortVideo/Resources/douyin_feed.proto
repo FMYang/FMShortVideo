@@ -1,4 +1,4 @@
-message "author" {
+message Feed {
   required double status_code = 0
   required double min_cursor = 1
   required double max_cursor = 2
