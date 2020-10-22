@@ -11,11 +11,14 @@
 
 + (void)getDouyinRecommendList {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    //    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/x-protobuf"];
     [manager.requestSerializer setValue:@"application/x-protobuf" forHTTPHeaderField:@"Accept"];
     manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"application/x-protobuf"];
     
+    // 推荐视频
     NSString *url = @"https://api100-core-c-lf.amemv.com/aweme/v2/feed/?tma_jssdk_version=1.81.0.3&ac=WIFI&is_vcd=1&max_cursor=0&gps_access=3&cached_item_num=0&volume=0.00&user_id=1103561502231902&pull_type=1&count=6&min_cursor=0&action_mask=-1&latitude=22.60487210433714&aweme_ids=&sp=60&address_book_access=1&type=0&last_ad_show_interval=6811&longitude=114.0569995146835&feed_style=0&mac_address=02%3A00%3A00%3A00%3A00%3A00&live_auto_enter=0&filter_warn=0&action_mask_detail=%7B%226886277739301571851%22%3A129%2C%226886020588645649677%22%3A128%2C%226885983820894440707%22%3A128%2C%226885265243774192903%22%3A0%2C%226835920128618564868%22%3A128%2C%226833270841623547140%22%3A128%7D&is_order_flow=0&";
+    
+    // 用户视频
+//    NSString *url = @"https://api3-normal-c-lf.amemv.com/aweme/v1/music/aweme/?tma_jssdk_version=1.81.0.3&ac=WIFI&is_vcd=1&cursor=0&music_id=6837461474225736462&count=18&pull_type=2&is_order_flow=0&type=6&user_avatar_shrink=96_96&video_cover_shrink=248_330&";
     
     NSDictionary *header = @{@"sdk-version": @"2",
                              @"passport-sdk-version": @"5.12.1",
@@ -32,11 +35,15 @@
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     request.URL = [NSURL URLWithString:url];
     [request setValue:@"application/x-protobuf" forHTTPHeaderField:@"Content-Type"];
+    for(NSString *key in header.allKeys) {
+        [request setValue:header[key] forHTTPHeaderField:key];
+    }
+    [request setHTTPBody:[self readProto]];
     //    [request setHTTPBody:protoBufData]; //设置Body
     
     [[manager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
         if(error) {
-            NSLog(@"请求失败");
+            NSLog(@"请求失败 %@", error);
         } else {
             NSLog(@"%@", responseObject);
         }
@@ -47,6 +54,12 @@
     //    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
     //        NSLog(@"失败 %@", error);
     //    }];
+}
+
++ (NSData *)readProto {
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"douyin_feed.proto" ofType:nil];
+    NSData *data = [NSData dataWithContentsOfFile:path];
+    return data;
 }
 
 @end

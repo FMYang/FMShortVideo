@@ -10,5 +10,7 @@ target 'FMShortVideo' do
    pod 'Masonry'
    
    pod 'SDWebImage'
+
+   pod 'Protobuf'
    
 end
