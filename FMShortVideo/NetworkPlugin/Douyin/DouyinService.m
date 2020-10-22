@@ -1,0 +1,52 @@
+//
+//  DouyinService.m
+//  FMShortVideo
+//
+//  Created by yfm on 2020/10/22.
+//
+
+#import "DouyinService.h"
+
+@implementation DouyinService
+
++ (void)getDouyinRecommendList {
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    //    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/x-protobuf"];
+    [manager.requestSerializer setValue:@"application/x-protobuf" forHTTPHeaderField:@"Accept"];
+    manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"application/x-protobuf"];
+    
+    NSString *url = @"https://api100-core-c-lf.amemv.com/aweme/v2/feed/?tma_jssdk_version=1.81.0.3&ac=WIFI&is_vcd=1&max_cursor=0&gps_access=3&cached_item_num=0&volume=0.00&user_id=1103561502231902&pull_type=1&count=6&min_cursor=0&action_mask=-1&latitude=22.60487210433714&aweme_ids=&sp=60&address_book_access=1&type=0&last_ad_show_interval=6811&longitude=114.0569995146835&feed_style=0&mac_address=02%3A00%3A00%3A00%3A00%3A00&live_auto_enter=0&filter_warn=0&action_mask_detail=%7B%226886277739301571851%22%3A129%2C%226886020588645649677%22%3A128%2C%226885983820894440707%22%3A128%2C%226885265243774192903%22%3A0%2C%226835920128618564868%22%3A128%2C%226833270841623547140%22%3A128%7D&is_order_flow=0&";
+    
+    NSDictionary *header = @{@"sdk-version": @"2",
+                             @"passport-sdk-version": @"5.12.1",
+                             @"x-Tt-Token": @"002038581c80f44ef2958415cd64df15c588d2a8127dfe2424c9b3f28062dd24881ddfc9d60f48765f07080861f726654727",
+                             @"User-Agent": @"Aweme 12.9.0 rv:129015 (iPhone; iOS 14.0.1; zh_CN) Cronet",
+                             @"X-SS-DP": @"1128",
+                             @"x-tt-trace-id": @"00-4faba76c0a10552b952b70de79810468-4faba76c0a10552b-01",
+                             @"Accept-Encoding": @"gzip, deflate, br",
+                             @"Cookie":@"d_ticket=b51345fa4038454c65b85a13bfaec57ea801d; multi_sids=1103561502231902%3A2038581c80f44ef2958415cd64df15c5; odin_tt=540777bcde4bf2052c3050d095dfd76a37f657455b95bbfe07600591c51dbc94c7ba521d21dc693176cbd9979294aed27f3edfb527356032ff6e375313548a49; sessionid=2038581c80f44ef2958415cd64df15c5; sessionid_ss=2038581c80f44ef2958415cd64df15c5; sid_guard=2038581c80f44ef2958415cd64df15c5%7C1602655987%7C5184000%7CSun%2C+13-Dec-2020+06%3A13%3A07+GMT; sid_tt=2038581c80f44ef2958415cd64df15c5; uid_tt=04cf8316288ef318bdac9661cf03a27c; uid_tt_ss=04cf8316288ef318bdac9661cf03a27c; install_id=4380078136113799; ttreq=1$bedc98d44f3f65ff6919318f2534f7580539664c",
+                             @"X-Khronos": @"1603359449",
+                             @"X-Gorgon": @"840220270000a3b6aa79916e2f66c22c5aa42ac35919939f6825",
+                             @"x-common-params-v2":@"channel=App%20Store&version_code=12.9.0&app_name=aweme&vid=BAC81642-7169-43A6-88D1-0C970AF904A0&app_version=12.9.0&mcc_mnc=&device_id=70148396331&aid=1128&screen_width=828&openudid=a2075339ef3c376f288d66414f2c3660a09554bd&os_api=18&os_version=14.0.1&device_platform=iphone&build_number=129015&device_type=iPhone12,1&iid=4380078136113799&idfa=008E78A1-ACF5-4584-A89C-8505914ADCD9&js_sdk_version=1.81.0.3&cdid=2A949315-316C-404F-8711-44836091CFD4"};
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    request.URL = [NSURL URLWithString:url];
+    [request setValue:@"application/x-protobuf" forHTTPHeaderField:@"Content-Type"];
+    //    [request setHTTPBody:protoBufData]; //设置Body
+    
+    [[manager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+        if(error) {
+            NSLog(@"请求失败");
+        } else {
+            NSLog(@"%@", responseObject);
+        }
+    }] resume];
+    
+    //    [manager GET:url parameters:nil headers:header progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    //        NSLog(@"成功 %@", responseObject);
+    //    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    //        NSLog(@"失败 %@", error);
+    //    }];
+}
+
+@end

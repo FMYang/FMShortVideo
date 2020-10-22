@@ -6,10 +6,10 @@
 //
 
 #import "AppDelegate.h"
-#import "HomeVC.h"
 #import <FMHttpRequest/FMHttpHeader.h>
-#import "FMParse.h"
 #import <AVFoundation/AVFoundation.h>
+#import "HomeVC.h"
+#import "FMParse.h"
 
 @interface AppDelegate ()
 @property (nonatomic, assign) BOOL hasAuthNetwork;
@@ -18,13 +18,16 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // 允许静音模式下播放音频
-    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback withOptions:AVAudioSessionCategoryOptionAllowBluetooth error:nil];
-    [[AVAudioSession sharedInstance] setActive:YES error:nil];
-    
+    [self configAudioSession];
     [self initNetwork];
     [self initWindow];
     return YES;
+}
+
+- (void)configAudioSession {
+    // 允许静音模式下播放音频
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback withOptions:AVAudioSessionCategoryOptionAllowBluetooth error:nil];
+    [[AVAudioSession sharedInstance] setActive:YES error:nil];
 }
 
 - (void)initWindow {
@@ -36,12 +39,7 @@
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
 }
-/*
- AFNetworkReachabilityStatusUnknown          = -1,
- AFNetworkReachabilityStatusNotReachable     = 0,
- AFNetworkReachabilityStatusReachableViaWWAN = 1,
- AFNetworkReachabilityStatusReachableViaWiFi = 2,
- */
+
 - (void)initNetwork {
     AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
     [manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {

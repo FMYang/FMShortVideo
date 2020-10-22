@@ -10,6 +10,8 @@
 #import "VideoCell.h"
 #import "FMPlayerView.h"
 
+#import "DouyinService.h"
+
 #define kScreenW UIScreen.mainScreen.bounds.size.width
 #define kScreenH UIScreen.mainScreen.bounds.size.height
 
@@ -20,6 +22,9 @@ static const int pageSize = 20;
 @property (nonatomic, strong) NSMutableArray<VideoModel *> *dataSource;
 @property (nonatomic, strong) UITableView *listTableView;
 @property (nonatomic, strong) FMPlayerView *playerView;
+@property (nonatomic, assign) NSInteger currentIndex;
+@property (nonatomic, assign) NSInteger beginScrollIndex;
+@property (nonatomic, assign) CGFloat velocity;
 @end
 
 @implementation HomeVC
@@ -34,7 +39,9 @@ static const int pageSize = 20;
     self.page = 1;
     
     [self setupUI];
-    [self fetchData];
+//    [self fetchData];
+    
+    [DouyinService getDouyinRecommendList];
 }
 
 - (void)networkAuthSuccess {
@@ -56,7 +63,6 @@ static const int pageSize = 20;
         [self.dataSource removeAllObjects];
         [self.dataSource addObjectsFromArray:result];
         [self.listTableView reloadData];
-        NSLog(@"%@", result);
         [self playVideo:0]; // 请求完成播放第0个视频
     } fail:^(FMError * _Nonnull error) {
         NSLog(@"%@", error.error);
@@ -82,12 +88,53 @@ static const int pageSize = 20;
     return kScreenH;
 }
 
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    self.beginScrollIndex = self.currentIndex;
+    
+//    CGPoint velocity = [scrollView.panGestureRecognizer velocityInView:scrollView];
+//    self.velocity = velocity.y;
+//    NSLog(@"fm y轴平移的速度 = %@", NSStringFromCGPoint(velocity));
+}
+
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     BOOL stopped = !scrollView.isDragging && !scrollView.isDecelerating && !scrollView.isTracking;
     if(stopped) {
-        NSInteger row = ceil((scrollView.contentOffset.y / kScreenH));
-        [self playVideo:row]; // 滑动停止播放当前视频
+        self.currentIndex = ceil((scrollView.contentOffset.y / kScreenH));
+        if(self.currentIndex != self.beginScrollIndex) {
+        [self playVideo:self.currentIndex]; // 滑动停止播放当前视频
+        }
     }
+    
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        // 平移的距离
+//        CGPoint translatedPoint = [scrollView.panGestureRecognizer translationInView:scrollView];
+////        CGPoint velocity = [scrollView.panGestureRecognizer velocityInView:scrollView];
+//        NSLog(@"fm y轴平移的距离 = %@", NSStringFromCGPoint(translatedPoint));
+////        NSLog(@"fm y轴平移的速度 = %@", NSStringFromCGPoint(velocity));
+//        if((translatedPoint.y < -kScreenH/2 || (self.velocity < 0 && self.velocity < -1200)) && self.currentIndex < (self.dataSource.count - 1)) {
+//            NSLog(@"向下翻页");
+//            self.currentIndex ++;   //向下滑动索引递增
+//        }
+//        if((translatedPoint.y > kScreenH/2 || (self.velocity > 0 && self.velocity > 800)) && self.currentIndex > 0) {
+//            NSLog(@"向上翻页");
+//            self.currentIndex --;   //向上滑动索引递减
+//        }
+//
+//        scrollView.panGestureRecognizer.enabled = NO;
+//        NSLog(@"fm beginScrollIndex = %d, currentIndex = %d", self.beginScrollIndex, self.currentIndex);
+//
+//        [UIView animateWithDuration:0.15
+//                              delay:0.0
+//                            options:UIViewAnimationOptionCurveEaseOut animations:^{
+//            //UITableView滑动到指定cell
+//            [self.listTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.currentIndex inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+//            if(self.currentIndex != self.beginScrollIndex) {
+//                [self playVideo:self.currentIndex]; // 滑动停止播放当前视频
+//            }
+//        } completion:^(BOOL finished) {
+//            scrollView.panGestureRecognizer.enabled = YES;
+//        }];
+//    });
 }
 
 - (void)playVideo:(NSInteger)row {
@@ -99,7 +146,7 @@ static const int pageSize = 20;
     [cell.contentView insertSubview:self.playerView atIndex:1];
     
     VideoModel *model = self.dataSource[row];
-    NSString *videoPath = model.video;
+    NSString *videoPath = @"http://v95-dy-a.ixigua.com/0c3ed64b9c02077a31c2ce3dd6456a1e/5f914862/video/tos/cn/tos-cn-ve-15/e5b19fd4459d461295d7e495d3614876/?a=1128&br=1968&bt=492&cr=3&cs=&cv=1&dr=0&ds=6&er=&l=20201022154846010202092157261310FA&lr=all&mime_type=video_mp4&qs=11&rc=M2wzbWV0NndkdTMzOmkzM0ApaDQzaDs2NTs1NzYzNTo8ZWdrMDQ0LjFxYV5fLS1iLS9zc2MyNWNeYy9gNDVeMjRjNS06Yw%3D%3D&vl=&vr=";//model.video;
     NSLog(@"%@", videoPath);
     AVURLAsset *asset = [AVURLAsset assetWithURL:[NSURL URLWithString:videoPath]];
     self.playerView.asset = asset;
@@ -126,6 +173,8 @@ static const int pageSize = 20;
         _listTableView = [[UITableView alloc] init];
         if (@available(iOS 11.0, *)) {
             _listTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        } else {
+            self.automaticallyAdjustsScrollViewInsets = NO;
         }
         _listTableView.scrollsToTop = NO;
         _listTableView.backgroundColor = UIColor.clearColor;

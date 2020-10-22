@@ -18,6 +18,7 @@
 		E4B76D35253EC8BA00501F05 /* VideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B76D34253EC8BA00501F05 /* VideoModel.m */; };
 		E4B76D3F253ECC9C00501F05 /* VideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B76D3E253ECC9C00501F05 /* VideoCell.m */; };
 		E4B76D4F253ED85600501F05 /* FMPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B76D4E253ED85600501F05 /* FMPlayerView.m */; };
+		E4B76D6525418E6A00501F05 /* DouyinService.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B76D6425418E6900501F05 /* DouyinService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,8 @@
 		E4B76D41253ECCDA00501F05 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		E4B76D4D253ED85600501F05 /* FMPlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMPlayerView.h; sourceTree = "<group>"; };
 		E4B76D4E253ED85600501F05 /* FMPlayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMPlayerView.m; sourceTree = "<group>"; };
+		E4B76D6325418E6900501F05 /* DouyinService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DouyinService.h; sourceTree = "<group>"; };
+		E4B76D6425418E6900501F05 /* DouyinService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DouyinService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +176,7 @@
 		E4B76D24253EC51600501F05 /* NetworkPlugin */ = {
 			isa = PBXGroup;
 			children = (
+				E4B76D6225418E4E00501F05 /* Douyin */,
 				E4B76D27253EC71400501F05 /* FMParse.h */,
 				E4B76D26253EC71400501F05 /* FMParse.m */,
 			);
@@ -197,6 +201,15 @@
 				E4B76D4E253ED85600501F05 /* FMPlayerView.m */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		E4B76D6225418E4E00501F05 /* Douyin */ = {
+			isa = PBXGroup;
+			children = (
+				E4B76D6325418E6900501F05 /* DouyinService.h */,
+				E4B76D6425418E6900501F05 /* DouyinService.m */,
+			);
+			path = Douyin;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4B76D1B253EBDD000501F05 /* HomeVC.m in Sources */,
+				E4B76D6525418E6A00501F05 /* DouyinService.m in Sources */,
 				E4B76D3F253ECC9C00501F05 /* VideoCell.m in Sources */,
 				E4B76D31253EC7BE00501F05 /* HomeNetwork.m in Sources */,
 				E4B76CF5253EBC4E00501F05 /* AppDelegate.m in Sources */,
