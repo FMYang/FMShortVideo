@@ -1,3 +1,5 @@
+syntax = "proto3";
+
 message Feed {
   required double status_code = 0
   required double min_cursor = 1

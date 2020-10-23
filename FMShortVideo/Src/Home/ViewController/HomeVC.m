@@ -12,8 +12,34 @@
 
 #import "DouyinService.h"
 
+#import "DouyinFeedMin.pbobjc.h"
+#import "Person.pbobjc.h"
+
+#import "FollowFeed.h"
+#import <MJExtension/MJExtension.h>
+
 #define kScreenW UIScreen.mainScreen.bounds.size.width
 #define kScreenH UIScreen.mainScreen.bounds.size.height
+
+#define kIsIPhoneXSerial \
+({BOOL isPhoneX = NO;\
+    if (@available(iOS 11.0, *)) {\
+        isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bottom > 0.0;\
+    }\
+(isPhoneX);})
+
+/// 状态栏高度（默认值）
+#define kStatusBarHeight            (kIsIPhoneXSerial ? 44 : 20)
+/// tabbar高度
+#define kTabBarHeight         (kIsIPhoneXSerial ? 83 : 49)
+/// 导航栏高度
+#define kNaviHeight            (kIsIPhoneXSerial ? 88 : 64)
+/// 底部安全区高度
+#define kBottomSafeHeight      (kIsIPhoneXSerial ? 34 : 0)
+/// 顶部安全区高度
+#define kTopSafeHeight      (kIsIPhoneXSerial ? 44 : 0)
+
+#define kContentHeight (kScreenH - kTabBarHeight)
 
 static const int pageSize = 20;
 
@@ -25,6 +51,8 @@ static const int pageSize = 20;
 @property (nonatomic, assign) NSInteger currentIndex;
 @property (nonatomic, assign) NSInteger beginScrollIndex;
 @property (nonatomic, assign) CGFloat velocity;
+
+@property (nonatomic, strong) FollowFeed *followFeed;
 @end
 
 @implementation HomeVC
@@ -39,9 +67,52 @@ static const int pageSize = 20;
     self.page = 1;
     
     [self setupUI];
-//    [self fetchData];
     
-    [DouyinService getDouyinRecommendList];
+    [self readLocalData];
+    
+    [self fetchData];
+    
+//    [DouyinService getDouyinRecommendList];
+    
+//    [self paraseDouyinData];
+}
+
+- (void)paraseDouyinData {
+//    NSString *documentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES).firstObject;
+//    NSString *path = [documentPath stringByAppendingPathComponent:@"douyin.protobuf"];
+//    NSData *data = [[NSFileManager defaultManager] contentsAtPath:path];
+//    NSLog(@"%ld", data.length);
+//
+//    NSError *err;
+//    Feed *feed = [Feed parseFromData:data error:&err];
+//    if(err) {
+//        NSLog(@"解析失败");
+//    } else {
+//        NSLog(@"解析成功 %@", feed);
+//    }
+    
+//    Person *person = [[Person alloc] init];
+//    person.name = @"hello";
+//    person.age = 1;
+//    person.gender = @"1";
+//
+//    NSData *data = person.data;
+//
+//    PersonM *newPerson = [PersonM parseFromData:data error:nil];
+//    NSLog(@"%@", newPerson.gender);
+}
+
+- (FollowFeed *)readLocalData {
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"follow_feed" ofType:nil];
+    NSData *data = [[NSFileManager defaultManager] contentsAtPath:path];
+    FollowFeed *feed = [FollowFeed mj_objectWithKeyValues:data];
+    
+    for(FeedList *item in feed.data) {
+        NSLog(@"%@", item.aweme.video.play_addr.url_list[0]);
+    }
+    
+    self.followFeed = feed;
+    return feed;
 }
 
 - (void)networkAuthSuccess {
@@ -85,7 +156,7 @@ static const int pageSize = 20;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return kScreenH;
+    return kContentHeight;
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
@@ -99,7 +170,7 @@ static const int pageSize = 20;
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     BOOL stopped = !scrollView.isDragging && !scrollView.isDecelerating && !scrollView.isTracking;
     if(stopped) {
-        self.currentIndex = ceil((scrollView.contentOffset.y / kScreenH));
+        self.currentIndex = ceil((scrollView.contentOffset.y / kContentHeight));
         if(self.currentIndex != self.beginScrollIndex) {
         [self playVideo:self.currentIndex]; // 滑动停止播放当前视频
         }
@@ -142,12 +213,19 @@ static const int pageSize = 20;
     self.playerView = nil;
     
     VideoCell *cell = [self.listTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0]];
-    self.playerView.frame = CGRectMake(0, 0, kScreenW, kScreenH);
+    self.playerView.frame = CGRectMake(0, 0, kScreenW, kContentHeight);
     [cell.contentView insertSubview:self.playerView atIndex:1];
     
     VideoModel *model = self.dataSource[row];
-    NSString *videoPath = @"http://v95-dy-a.ixigua.com/0c3ed64b9c02077a31c2ce3dd6456a1e/5f914862/video/tos/cn/tos-cn-ve-15/e5b19fd4459d461295d7e495d3614876/?a=1128&br=1968&bt=492&cr=3&cs=&cv=1&dr=0&ds=6&er=&l=20201022154846010202092157261310FA&lr=all&mime_type=video_mp4&qs=11&rc=M2wzbWV0NndkdTMzOmkzM0ApaDQzaDs2NTs1NzYzNTo8ZWdrMDQ0LjFxYV5fLS1iLS9zc2MyNWNeYy9gNDVeMjRjNS06Yw%3D%3D&vl=&vr=";//model.video;
+    NSString *videoPath = model.video;
+    
+    if(row < self.followFeed.data.count) {
+        NSLog(@"xxxxxx");
+        videoPath = self.followFeed.data[row].aweme.video.play_addr.url_list[1];
+    }
+    
     NSLog(@"%@", videoPath);
+
     AVURLAsset *asset = [AVURLAsset assetWithURL:[NSURL URLWithString:videoPath]];
     self.playerView.asset = asset;
 }
@@ -156,7 +234,8 @@ static const int pageSize = 20;
 - (void)setupUI {
     [self.view addSubview:self.listTableView];
     [self.listTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(0);
+        make.top.left.right.mas_equalTo(0);
+        make.bottom.mas_equalTo(self.view.mas_bottom).offset(-kBottomSafeHeight);
     }];
 }
 
@@ -191,7 +270,7 @@ static const int pageSize = 20;
 
 - (FMPlayerView *)playerView {
     if(!_playerView) {
-        _playerView = [[FMPlayerView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, kScreenH)];
+        _playerView = [[FMPlayerView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, kContentHeight)];
         _playerView.volume = 0.5;
     }
     return _playerView;

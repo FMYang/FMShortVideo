@@ -1,0 +1,493 @@
+{
+    "aweme_list": [{
+        "aweme_id": "6886284323100560653",
+        "desc": "22日，四川北川发生4.7级地震，北川永昌小学仅用2分钟疏散2670名学生！",
+        "create_time": 1603338016,
+        "author": {
+            "uid": "98680217165",
+            "short_id": "951142306",
+            "nickname": "四川观察",
+            "signature": "Gz号：四川观天下【正在送福利】\n【官方合作投稿联系方式】\n抖音搜索：观观爆料箱\nV信：sctvgcgzs\n邮箱：scgcnews@163.com\n欢迎合作，向观观投稿",
+            "avatar_larger": {
+                "uri": "1080x1080/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502",
+                "url_list": ["https://p29-dy.byteimg.com/img/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~c5_1080x1080.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3", "https://p6-dy-ipv6.byteimg.com/img/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~c5_1080x1080.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3", "https://p3-dy-ipv6-test.byteimg.com/img/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~c5_1080x1080.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3"],
+                "width": 720,
+                "height": 720
+            },
+            "avatar_thumb": {
+                "uri": "100x100/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502",
+                "url_list": ["https://p3-dy-ipv6-test.byteimg.com/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~tplv-dy-shrink:96:96.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=true\u0026sh=96_96\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3", "https://p6-dy-ipv6.byteimg.com/img/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~c5_100x100.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3", "https://p1-dy-ipv6.byteimg.com/img/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~c5_100x100.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3", "https://p3-dy-ipv6-test.byteimg.com/img/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~c5_100x100.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3"],
+                "width": 720,
+                "height": 720
+            },
+            "avatar_medium": {
+                "uri": "720x720/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502",
+                "url_list": ["https://p9-dy.byteimg.com/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~tplv-dy-shrink:96:96.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=true\u0026sh=96_96\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3", "https://p9-dy.byteimg.com/img/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~c5_720x720.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3", "https://p29-dy.byteimg.com/img/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~c5_720x720.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3", "https://p3-dy-ipv6-test.byteimg.com/img/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~c5_720x720.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3"],
+                "width": 720,
+                "height": 720
+            },
+            "is_verified": true,
+            "follow_status": 0,
+            "is_block": false,
+            "location": "",
+            "hide_location": false,
+            "custom_verify": "",
+            "unique_id": "scgcnews",
+            "story_count": 0,
+            "room_id": 6883324921431526147,
+            "authority_status": 0,
+            "verify_info": "",
+            "share_info": {
+                "share_url": "",
+                "share_weibo_desc": "",
+                "share_desc": "",
+                "share_title": "",
+                "share_qrcode_url": {
+                    "uri": "83760029cdad4cd49574",
+                    "url_list": ["https://p26-dy.byteimg.com/obj/83760029cdad4cd49574?from=2563711402", "https://p29-dy.byteimg.com/obj/83760029cdad4cd49574?from=2563711402", "https://p9-dy.byteimg.com/obj/83760029cdad4cd49574?from=2563711402"],
+                    "width": 720,
+                    "height": 720
+                },
+                "share_title_myself": "",
+                "share_title_other": "",
+                "share_desc_info": ""
+            },
+            "with_commerce_entry": false,
+            "verification_type": 1,
+            "enterprise_verify_reason": "四川广播电视台新媒体",
+            "is_ad_fake": false,
+            "followers_detail": null,
+            "region": "CN",
+            "sync_to_toutiao": 0,
+            "commerce_user_level": 0,
+            "is_discipline_member": false,
+            "secret": 0,
+            "video_icon": {
+                "uri": "",
+                "url_list": [],
+                "width": 720,
+                "height": 720
+            },
+            "is_gov_media_vip": true,
+            "follower_status": 0,
+            "cover_url": [{
+                "uri": "c8510002be9a3a61aad2",
+                "url_list": ["https://p3-dy-ipv6.byteimg.com/obj/c8510002be9a3a61aad2?from=2563711402", "https://p26-dy.byteimg.com/obj/c8510002be9a3a61aad2?from=2563711402", "https://p9-dy.byteimg.com/obj/c8510002be9a3a61aad2?from=2563711402"],
+                "width": 720,
+                "height": 720
+            }],
+            "language": "zh-Hans",
+            "has_unread_story": false,
+            "is_star": false,
+            "ad_cover_url": null,
+            "avatar_168x168": {
+                "uri": "168x168/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502",
+                "url_list": ["https://p6-dy-ipv6.byteimg.com/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~tplv-dy-shrink:96:96.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=true\u0026sh=96_96\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3", "https://p3-dy-ipv6.byteimg.com/img/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~c5_168x168.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3", "https://p26-dy.byteimg.com/img/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~c5_168x168.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3", "https://p9-dy.byteimg.com/img/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~c5_168x168.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3"],
+                "width": 720,
+                "height": 720
+            },
+            "avatar_300x300": {
+                "uri": "300x300/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502",
+                "url_list": ["https://p26-dy.byteimg.com/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~tplv-dy-shrink:96:96.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=true\u0026sh=96_96\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3", "https://p26-dy.byteimg.com/img/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~c5_300x300.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3", "https://p29-dy.byteimg.com/img/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~c5_300x300.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3", "https://p3-dy-ipv6-test.byteimg.com/img/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~c5_300x300.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3"],
+                "width": 720,
+                "height": 720
+            },
+            "relative_users": null,
+            "cha_list": null,
+            "sec_uid": "MS4wLjABAAAAg-FNvWWqPDHzDcC7zfumsDrlPzyYn9z0co5OUmXSgcM",
+            "prevent_download": false,
+            "comment_setting": 0,
+            "duet_setting": 0,
+            "download_setting": -1,
+            "comment_filter_status": 0,
+            "stitch_setting": 0,
+            "is_mix_user": true
+        },
+        "music": {
+            "id": 6886284340351830797,
+            "id_str": "6886284340351830797",
+            "title": "@四川观察创作的原声",
+            "author": "四川观察",
+            "album": "",
+            "cover_hd": {
+                "uri": "1080x1080/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502",
+                "url_list": ["https://p26-dy.byteimg.com/img/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~c5_1080x1080.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3", "https://p29-dy.byteimg.com/img/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~c5_1080x1080.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3", "https://p6-dy-ipv6.byteimg.com/img/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~c5_1080x1080.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3"],
+                "width": 720,
+                "height": 720
+            },
+            "cover_large": {
+                "uri": "1080x1080/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502",
+                "url_list": ["https://p26-dy.byteimg.com/img/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~c5_1080x1080.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3", "https://p29-dy.byteimg.com/img/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~c5_1080x1080.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3", "https://p6-dy-ipv6.byteimg.com/img/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~c5_1080x1080.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3"],
+                "width": 720,
+                "height": 720
+            },
+            "cover_medium": {
+                "uri": "720x720/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502",
+                "url_list": ["https://p26-dy.byteimg.com/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~tplv-dy-shrink:96:96.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=true\u0026sh=96_96\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3", "https://p6-dy-ipv6.byteimg.com/img/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~c5_720x720.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3", "https://p3-dy-ipv6-test.byteimg.com/img/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~c5_720x720.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3", "https://p29-dy.byteimg.com/img/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~c5_720x720.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3"],
+                "width": 720,
+                "height": 720
+            },
+            "cover_thumb": {
+                "uri": "100x100/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502",
+                "url_list": ["https://p9-dy.byteimg.com/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~tplv-dy-shrink:96:96.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=true\u0026sh=96_96\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3", "https://p3-dy-ipv6.byteimg.com/img/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~c5_100x100.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3", "https://p1-dy-ipv6.byteimg.com/img/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~c5_100x100.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3", "https://p9-dy.byteimg.com/img/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~c5_100x100.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3"],
+                "width": 720,
+                "height": 720
+            },
+            "play_url": {
+                "uri": "https://p9-dy.byteimg.com/obj/ies-music/6886284318344301326.mp3",
+                "url_list": ["https://p9-dy.byteimg.com/obj/ies-music/6886284318344301326.mp3", "https://p1-dy.byteimg.com/obj/ies-music/6886284318344301326.mp3"],
+                "width": 720,
+                "height": 720
+            },
+            "schema_url": "",
+            "source_platform": 23,
+            "start_time": 0,
+            "end_time": 0,
+            "duration": 9,
+            "extra": "{\"reviewed\":1,\"review_unshelve_reason\":0,\"beats\":{},\"douyin_beats_info\":{},\"music_label_id\":null,\"aggregate_exempt_conf\":[],\"has_edited\":0,\"hotsoon_review_time\":-1,\"schedule_search_time\":0}",
+            "user_count": 0,
+            "position": null,
+            "collect_stat": 0,
+            "status": 1,
+            "offline_desc": "",
+            "owner_id": "98680217165",
+            "owner_nickname": "四川观察",
+            "is_original": false,
+            "mid": "6886284340351830797",
+            "binded_challenge_id": 0,
+            "redirect": false,
+            "is_restricted": false,
+            "author_deleted": false,
+            "is_del_video": false,
+            "is_video_self_see": false,
+            "owner_handle": "scgcnews",
+            "author_position": null,
+            "prevent_download": false,
+            "strong_beat_url": {
+                "uri": "https://p9-dy.byteimg.com/obj/ies-music/strong_beat/1681229163428878",
+                "url_list": ["https://p9-dy.byteimg.com/obj/ies-music/strong_beat/1681229163428878", "https://p1-dy.byteimg.com/obj/ies-music/strong_beat/1681229163428878"],
+                "width": 720,
+                "height": 720
+            },
+            "unshelve_countries": null,
+            "prevent_item_download_status": 0,
+            "external_song_info": [],
+            "sec_uid": "MS4wLjABAAAAg-FNvWWqPDHzDcC7zfumsDrlPzyYn9z0co5OUmXSgcM",
+            "avatar_thumb": {
+                "uri": "100x100/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502",
+                "url_list": ["https://p9-dy.byteimg.com/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~tplv-dy-shrink:96:96.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=true\u0026sh=96_96\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3", "https://p3-dy-ipv6.byteimg.com/img/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~c5_100x100.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3", "https://p1-dy-ipv6.byteimg.com/img/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~c5_100x100.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3", "https://p9-dy.byteimg.com/img/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~c5_100x100.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3"],
+                "width": 720,
+                "height": 720
+            },
+            "avatar_medium": {
+                "uri": "720x720/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502",
+                "url_list": ["https://p26-dy.byteimg.com/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~tplv-dy-shrink:96:96.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=true\u0026sh=96_96\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3", "https://p6-dy-ipv6.byteimg.com/img/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~c5_720x720.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3", "https://p3-dy-ipv6-test.byteimg.com/img/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~c5_720x720.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3", "https://p29-dy.byteimg.com/img/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~c5_720x720.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3"],
+                "width": 720,
+                "height": 720
+            },
+            "avatar_large": {
+                "uri": "1080x1080/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502",
+                "url_list": ["https://p26-dy.byteimg.com/img/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~c5_1080x1080.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3", "https://p29-dy.byteimg.com/img/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~c5_1080x1080.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3", "https://p6-dy-ipv6.byteimg.com/img/tos-cn-i-0813/8b57ef6df3fe45a198d302f8c7f5a502~c5_1080x1080.jpeg?from=2563711402\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=avatar\u0026l=202010231613430101980662181200B8D3"],
+                "width": 720,
+                "height": 720
+            },
+            "preview_start_time": 0,
+            "preview_end_time": 0,
+            "is_commerce_music": false,
+            "is_original_sound": true,
+            "audition_duration": 9,
+            "shoot_duration": 9,
+            "reason_type": 0,
+            "artists": [],
+            "lyric_short_position": null,
+            "mute_share": false,
+            "tag_list": null,
+            "dmv_auto_show": false,
+            "is_pgc": false,
+            "is_matched_metadata": false,
+            "is_audio_url_with_cookie": false,
+            "music_chart_ranks": null,
+            "can_background_play": true
+        },
+        "cha_list": null,
+        "video": {
+            "play_addr": {
+                "uri": "v0300fd90000bu8fu2unhbrq82b6lleg",
+                "url_list": ["http://v95-dy-a.ixigua.com/bbc18edb902a4952aff3dcca273e2064/5f929ed0/video/tos/cn/tos-cn-ve-15/460060dea3784036b0ac4f5a44db9618/?a=1128\u0026br=6544\u0026bt=1636\u0026cr=3\u0026cs=\u0026cv=1\u0026dr=0\u0026ds=6\u0026er=\u0026l=202010231613430101980662181200B8D3\u0026lr=all\u0026mime_type=video_mp4\u0026qs=11\u0026rc=am85NXRlcTVpeDMzPGkzM0ApZTxpaDNlZDw3Nzc3aGdmZ2diaV81b2VycjVfLS1hLTBzczEwMV9eNDQyLjIuLi4wMzE6Yw%3D%3D\u0026vl=\u0026vr=", "http://v3-dy-c.ixigua.com/9bb4ee28c054242e6bac55435f2f4f68/5f929ed0/video/tos/cn/tos-cn-ve-15/460060dea3784036b0ac4f5a44db9618/?a=1128\u0026br=6544\u0026bt=1636\u0026cr=3\u0026cs=\u0026cv=1\u0026dr=0\u0026ds=6\u0026er=\u0026l=202010231613430101980662181200B8D3\u0026lr=all\u0026mime_type=video_mp4\u0026qs=11\u0026rc=am85NXRlcTVpeDMzPGkzM0ApZTxpaDNlZDw3Nzc3aGdmZ2diaV81b2VycjVfLS1hLTBzczEwMV9eNDQyLjIuLi4wMzE6Yw%3D%3D\u0026vl=\u0026vr=", "https://aweme.snssdk.com/aweme/v1/play/?video_id=v0300fd90000bu8fu2unhbrq82b6lleg\u0026line=0\u0026ratio=540p\u0026media_type=4\u0026vr_type=0\u0026improve_bitrate=0\u0026is_play_url=1\u0026bytevc1=1\u0026quality_type=11\u0026adapt540=1\u0026source=PackSourceEnum_MUSIC_AWEME", "https://api.amemv.com/aweme/v1/play/?video_id=v0300fd90000bu8fu2unhbrq82b6lleg\u0026line=1\u0026ratio=540p\u0026media_type=4\u0026vr_type=0\u0026improve_bitrate=0\u0026is_play_url=1\u0026bytevc1=1\u0026quality_type=11\u0026adapt540=1\u0026source=PackSourceEnum_MUSIC_AWEME"],
+                "width": 720,
+                "height": 720,
+                "url_key": "v0300fd90000bu8fu2unhbrq82b6lleg_bytevc1_540p_1676135",
+                "data_size": 2032473,
+                "file_cs": "c:0-11273-56e3"
+            },
+            "cover": {
+                "uri": "tos-cn-p-0015/47f7808f8891437a9b934e951662c7f5",
+                "url_list": ["https://p3-dy-ipv6.byteimg.com/tos-cn-p-0015/47f7808f8891437a9b934e951662c7f5~tplv-dy-shrink:248:330.jpeg?from=2563711402_large\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=true\u0026sh=248_330\u0026sc=cover\u0026l=202010231613430101980662181200B8D3", "https://p3-dy-ipv6-test.byteimg.com/img/tos-cn-p-0015/47f7808f8891437a9b934e951662c7f5~c5_300x400.jpeg?from=2563711402_large\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=cover\u0026l=202010231613430101980662181200B8D3", "https://p29-dy.byteimg.com/img/tos-cn-p-0015/47f7808f8891437a9b934e951662c7f5~c5_300x400.jpeg?from=2563711402_large\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=cover\u0026l=202010231613430101980662181200B8D3", "https://p9-dy.byteimg.com/img/tos-cn-p-0015/47f7808f8891437a9b934e951662c7f5~c5_300x400.jpeg?from=2563711402_large\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=cover\u0026l=202010231613430101980662181200B8D3"],
+                "width": 720,
+                "height": 720
+            },
+            "height": 960,
+            "width": 544,
+            "dynamic_cover": {
+                "uri": "tos-cn-p-0015/8f4e824ff2c74520b79b2c352a9d762d_1603338018",
+                "url_list": ["https://p9-dy.byteimg.com/obj/tos-cn-p-0015/8f4e824ff2c74520b79b2c352a9d762d_1603338018?from=2563711402_large\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=dynamic_cover\u0026l=202010231613430101980662181200B8D3", "https://p3-dy-ipv6-test.byteimg.com/obj/tos-cn-p-0015/8f4e824ff2c74520b79b2c352a9d762d_1603338018?from=2563711402_large\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=dynamic_cover\u0026l=202010231613430101980662181200B8D3", "https://p1-dy-ipv6.byteimg.com/obj/tos-cn-p-0015/8f4e824ff2c74520b79b2c352a9d762d_1603338018?from=2563711402_large\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=dynamic_cover\u0026l=202010231613430101980662181200B8D3"],
+                "width": 720,
+                "height": 720
+            },
+            "origin_cover": {
+                "uri": "tos-cn-p-0015/00bd8de19575493e82965eab67ad9d63_1603338017",
+                "url_list": ["https://p29-dy.byteimg.com/tos-cn-p-0015/00bd8de19575493e82965eab67ad9d63_1603338017~tplv-dy-360p.heic?from=2563711402", "https://p3-dy-ipv6.byteimg.com/tos-cn-p-0015/00bd8de19575493e82965eab67ad9d63_1603338017~tplv-dy-360p.heic?from=2563711402", "https://p9-dy.byteimg.com/tos-cn-p-0015/00bd8de19575493e82965eab67ad9d63_1603338017~tplv-dy-360p.heic?from=2563711402", "https://p29-dy.byteimg.com/tos-cn-p-0015/00bd8de19575493e82965eab67ad9d63_1603338017~tplv-dy-360p.jpeg?from=2563711402"],
+                "width": 720,
+                "height": 720
+            },
+            "ratio": "540p",
+            "download_addr": {
+                "uri": "v0300fd90000bu8fu2unhbrq82b6lleg",
+                "url_list": ["http://v95-dy-a.ixigua.com/1ba6bfa9857d545fd076d406aa179225/5f929ed0/video/tos/cn/tos-cn-ve-15/9ab11dc2d452492ab832b8604b6ac6d4/?a=1128\u0026br=4308\u0026bt=1436\u0026cr=3\u0026cs=0\u0026cv=1\u0026dr=0\u0026ds=3\u0026er=\u0026l=202010231613430101980662181200B8D3\u0026lr=all\u0026mime_type=video_mp4\u0026qs=0\u0026rc=am85NXRlcTVpeDMzPGkzM0ApODM7PGU2NTxmN2g1NDdlaWdiaV81b2VycjVfLS1hLTBzc2FhNC5fX2NhMTMvLWIvYmI6Yw%3D%3D\u0026vl=\u0026vr=", "http://v3-dy-c.ixigua.com/fa8d53a35adef6a04566d3e72a44ae64/5f929ed0/video/tos/cn/tos-cn-ve-15/9ab11dc2d452492ab832b8604b6ac6d4/?a=1128\u0026br=4308\u0026bt=1436\u0026cr=3\u0026cs=0\u0026cv=1\u0026dr=0\u0026ds=3\u0026er=\u0026l=202010231613430101980662181200B8D3\u0026lr=all\u0026mime_type=video_mp4\u0026qs=0\u0026rc=am85NXRlcTVpeDMzPGkzM0ApODM7PGU2NTxmN2g1NDdlaWdiaV81b2VycjVfLS1hLTBzc2FhNC5fX2NhMTMvLWIvYmI6Yw%3D%3D\u0026vl=\u0026vr=", "https://aweme.snssdk.com/aweme/v1/play/?video_id=v0300fd90000bu8fu2unhbrq82b6lleg\u0026line=0\u0026ratio=540p\u0026watermark=1\u0026media_type=4\u0026vr_type=0\u0026improve_bitrate=0\u0026logo_name=aweme_search_suffix\u0026quality_type=11\u0026source=PackSourceEnum_MUSIC_AWEME", "https://api.amemv.com/aweme/v1/play/?video_id=v0300fd90000bu8fu2unhbrq82b6lleg\u0026line=1\u0026ratio=540p\u0026watermark=1\u0026media_type=4\u0026vr_type=0\u0026improve_bitrate=0\u0026logo_name=aweme_search_suffix\u0026quality_type=11\u0026source=PackSourceEnum_MUSIC_AWEME"],
+                "width": 720,
+                "height": 720,
+                "data_size": 2219829
+            },
+            "has_watermark": true,
+            "play_addr_lowbr": {
+                "uri": "v0300fd90000bu8fu2unhbrq82b6lleg",
+                "url_list": ["http://v95-dy-a.ixigua.com/bbc18edb902a4952aff3dcca273e2064/5f929ed0/video/tos/cn/tos-cn-ve-15/460060dea3784036b0ac4f5a44db9618/?a=1128\u0026br=6544\u0026bt=1636\u0026cr=3\u0026cs=\u0026cv=1\u0026dr=0\u0026ds=6\u0026er=\u0026l=202010231613430101980662181200B8D3\u0026lr=all\u0026mime_type=video_mp4\u0026qs=11\u0026rc=am85NXRlcTVpeDMzPGkzM0ApZTxpaDNlZDw3Nzc3aGdmZ2diaV81b2VycjVfLS1hLTBzczEwMV9eNDQyLjIuLi4wMzE6Yw%3D%3D\u0026vl=\u0026vr=", "http://v3-dy-c.ixigua.com/9bb4ee28c054242e6bac55435f2f4f68/5f929ed0/video/tos/cn/tos-cn-ve-15/460060dea3784036b0ac4f5a44db9618/?a=1128\u0026br=6544\u0026bt=1636\u0026cr=3\u0026cs=\u0026cv=1\u0026dr=0\u0026ds=6\u0026er=\u0026l=202010231613430101980662181200B8D3\u0026lr=all\u0026mime_type=video_mp4\u0026qs=11\u0026rc=am85NXRlcTVpeDMzPGkzM0ApZTxpaDNlZDw3Nzc3aGdmZ2diaV81b2VycjVfLS1hLTBzczEwMV9eNDQyLjIuLi4wMzE6Yw%3D%3D\u0026vl=\u0026vr=", "https://aweme.snssdk.com/aweme/v1/play/?video_id=v0300fd90000bu8fu2unhbrq82b6lleg\u0026line=0\u0026ratio=540p\u0026media_type=4\u0026vr_type=0\u0026improve_bitrate=0\u0026is_play_url=1\u0026bytevc1=1\u0026quality_type=11\u0026adapt540=1\u0026source=PackSourceEnum_MUSIC_AWEME", "https://api.amemv.com/aweme/v1/play/?video_id=v0300fd90000bu8fu2unhbrq82b6lleg\u0026line=1\u0026ratio=540p\u0026media_type=4\u0026vr_type=0\u0026improve_bitrate=0\u0026is_play_url=1\u0026bytevc1=1\u0026quality_type=11\u0026adapt540=1\u0026source=PackSourceEnum_MUSIC_AWEME"],
+                "width": 720,
+                "height": 720,
+                "url_key": "v0300fd90000bu8fu2unhbrq82b6lleg_bytevc1_540p_1676135",
+                "data_size": 2032473,
+                "file_cs": "c:0-11273-56e3"
+            },
+            "bit_rate": [{
+                "gear_name": "adapt_540",
+                "quality_type": 28,
+                "bit_rate": 1676135,
+                "play_addr": {
+                    "uri": "v0300fd90000bu8fu2unhbrq82b6lleg",
+                    "url_list": ["http://v95-dy-a.ixigua.com/bbc18edb902a4952aff3dcca273e2064/5f929ed0/video/tos/cn/tos-cn-ve-15/460060dea3784036b0ac4f5a44db9618/?a=1128\u0026br=6544\u0026bt=1636\u0026cr=3\u0026cs=\u0026cv=1\u0026dr=0\u0026ds=6\u0026er=\u0026l=202010231613430101980662181200B8D3\u0026lr=all\u0026mime_type=video_mp4\u0026qs=11\u0026rc=am85NXRlcTVpeDMzPGkzM0ApZTxpaDNlZDw3Nzc3aGdmZ2diaV81b2VycjVfLS1hLTBzczEwMV9eNDQyLjIuLi4wMzE6Yw%3D%3D\u0026vl=\u0026vr=", "http://v3-dy-c.ixigua.com/9bb4ee28c054242e6bac55435f2f4f68/5f929ed0/video/tos/cn/tos-cn-ve-15/460060dea3784036b0ac4f5a44db9618/?a=1128\u0026br=6544\u0026bt=1636\u0026cr=3\u0026cs=\u0026cv=1\u0026dr=0\u0026ds=6\u0026er=\u0026l=202010231613430101980662181200B8D3\u0026lr=all\u0026mime_type=video_mp4\u0026qs=11\u0026rc=am85NXRlcTVpeDMzPGkzM0ApZTxpaDNlZDw3Nzc3aGdmZ2diaV81b2VycjVfLS1hLTBzczEwMV9eNDQyLjIuLi4wMzE6Yw%3D%3D\u0026vl=\u0026vr=", "https://aweme.snssdk.com/aweme/v1/play/?video_id=v0300fd90000bu8fu2unhbrq82b6lleg\u0026line=0\u0026ratio=540p\u0026media_type=4\u0026vr_type=0\u0026improve_bitrate=0\u0026is_play_url=1\u0026bytevc1=1\u0026quality_type=11\u0026adapt540=1\u0026source=PackSourceEnum_MUSIC_AWEME", "https://api.amemv.com/aweme/v1/play/?video_id=v0300fd90000bu8fu2unhbrq82b6lleg\u0026line=1\u0026ratio=540p\u0026media_type=4\u0026vr_type=0\u0026improve_bitrate=0\u0026is_play_url=1\u0026bytevc1=1\u0026quality_type=11\u0026adapt540=1\u0026source=PackSourceEnum_MUSIC_AWEME"],
+                    "width": 720,
+                    "height": 720,
+                    "url_key": "v0300fd90000bu8fu2unhbrq82b6lleg_bytevc1_540p_1676135",
+                    "data_size": 1897176,
+                    "file_cs": "c:0-11273-56e3"
+                },
+                "is_h265": 1,
+                "is_bytevc1": 1
+            }],
+            "duration": 9055,
+            "download_suffix_logo_addr": {
+                "uri": "v0300fd90000bu8fu2unhbrq82b6lleg",
+                "url_list": ["http://v95-dy-a.ixigua.com/1ba6bfa9857d545fd076d406aa179225/5f929ed0/video/tos/cn/tos-cn-ve-15/9ab11dc2d452492ab832b8604b6ac6d4/?a=1128\u0026br=4308\u0026bt=1436\u0026cr=3\u0026cs=0\u0026cv=1\u0026dr=0\u0026ds=3\u0026er=\u0026l=202010231613430101980662181200B8D3\u0026lr=all\u0026mime_type=video_mp4\u0026qs=0\u0026rc=am85NXRlcTVpeDMzPGkzM0ApODM7PGU2NTxmN2g1NDdlaWdiaV81b2VycjVfLS1hLTBzc2FhNC5fX2NhMTMvLWIvYmI6Yw%3D%3D\u0026vl=\u0026vr=", "http://v3-dy-c.ixigua.com/fa8d53a35adef6a04566d3e72a44ae64/5f929ed0/video/tos/cn/tos-cn-ve-15/9ab11dc2d452492ab832b8604b6ac6d4/?a=1128\u0026br=4308\u0026bt=1436\u0026cr=3\u0026cs=0\u0026cv=1\u0026dr=0\u0026ds=3\u0026er=\u0026l=202010231613430101980662181200B8D3\u0026lr=all\u0026mime_type=video_mp4\u0026qs=0\u0026rc=am85NXRlcTVpeDMzPGkzM0ApODM7PGU2NTxmN2g1NDdlaWdiaV81b2VycjVfLS1hLTBzc2FhNC5fX2NhMTMvLWIvYmI6Yw%3D%3D\u0026vl=\u0026vr=", "https://aweme.snssdk.com/aweme/v1/play/?video_id=v0300fd90000bu8fu2unhbrq82b6lleg\u0026line=0\u0026ratio=540p\u0026watermark=1\u0026media_type=4\u0026vr_type=0\u0026improve_bitrate=0\u0026logo_name=aweme_search_suffix\u0026quality_type=11\u0026source=PackSourceEnum_MUSIC_AWEME", "https://api.amemv.com/aweme/v1/play/?video_id=v0300fd90000bu8fu2unhbrq82b6lleg\u0026line=1\u0026ratio=540p\u0026watermark=1\u0026media_type=4\u0026vr_type=0\u0026improve_bitrate=0\u0026logo_name=aweme_search_suffix\u0026quality_type=11\u0026source=PackSourceEnum_MUSIC_AWEME"],
+                "width": 720,
+                "height": 720,
+                "data_size": 2219829
+            },
+            "has_download_suffix_logo_addr": true,
+            "play_addr_265": {
+                "uri": "v0300fd90000bu8fu2unhbrq82b6lleg",
+                "url_list": ["http://v95-dy-a.ixigua.com/bbc18edb902a4952aff3dcca273e2064/5f929ed0/video/tos/cn/tos-cn-ve-15/460060dea3784036b0ac4f5a44db9618/?a=1128\u0026br=6544\u0026bt=1636\u0026cr=3\u0026cs=\u0026cv=1\u0026dr=0\u0026ds=6\u0026er=\u0026l=202010231613430101980662181200B8D3\u0026lr=all\u0026mime_type=video_mp4\u0026qs=11\u0026rc=am85NXRlcTVpeDMzPGkzM0ApZTxpaDNlZDw3Nzc3aGdmZ2diaV81b2VycjVfLS1hLTBzczEwMV9eNDQyLjIuLi4wMzE6Yw%3D%3D\u0026vl=\u0026vr=", "http://v3-dy-c.ixigua.com/9bb4ee28c054242e6bac55435f2f4f68/5f929ed0/video/tos/cn/tos-cn-ve-15/460060dea3784036b0ac4f5a44db9618/?a=1128\u0026br=6544\u0026bt=1636\u0026cr=3\u0026cs=\u0026cv=1\u0026dr=0\u0026ds=6\u0026er=\u0026l=202010231613430101980662181200B8D3\u0026lr=all\u0026mime_type=video_mp4\u0026qs=11\u0026rc=am85NXRlcTVpeDMzPGkzM0ApZTxpaDNlZDw3Nzc3aGdmZ2diaV81b2VycjVfLS1hLTBzczEwMV9eNDQyLjIuLi4wMzE6Yw%3D%3D\u0026vl=\u0026vr=", "https://aweme.snssdk.com/aweme/v1/play/?video_id=v0300fd90000bu8fu2unhbrq82b6lleg\u0026line=0\u0026ratio=540p\u0026media_type=4\u0026vr_type=0\u0026improve_bitrate=0\u0026is_play_url=1\u0026bytevc1=1\u0026quality_type=11\u0026adapt540=1\u0026source=PackSourceEnum_MUSIC_AWEME", "https://api.amemv.com/aweme/v1/play/?video_id=v0300fd90000bu8fu2unhbrq82b6lleg\u0026line=1\u0026ratio=540p\u0026media_type=4\u0026vr_type=0\u0026improve_bitrate=0\u0026is_play_url=1\u0026bytevc1=1\u0026quality_type=11\u0026adapt540=1\u0026source=PackSourceEnum_MUSIC_AWEME"],
+                "width": 720,
+                "height": 720,
+                "url_key": "v0300fd90000bu8fu2unhbrq82b6lleg_bytevc1_540p_1676135",
+                "data_size": 1897176,
+                "file_cs": "c:0-11273-56e3"
+            },
+            "is_h265": 1,
+            "play_addr_h264": {
+                "uri": "v0300fd90000bu8fu2unhbrq82b6lleg",
+                "url_list": ["https://aweme.snssdk.com/aweme/v1/play/?video_id=v0300fd90000bu8fu2unhbrq82b6lleg\u0026line=0\u0026ratio=540p\u0026media_type=4\u0026vr_type=0\u0026improve_bitrate=0\u0026is_play_url=1\u0026quality_type=11\u0026source=PackSourceEnum_MUSIC_AWEME", "https://api.amemv.com/aweme/v1/play/?video_id=v0300fd90000bu8fu2unhbrq82b6lleg\u0026line=1\u0026ratio=540p\u0026media_type=4\u0026vr_type=0\u0026improve_bitrate=0\u0026is_play_url=1\u0026quality_type=11\u0026source=PackSourceEnum_MUSIC_AWEME"],
+                "width": 720,
+                "height": 720,
+                "url_key": "v0300fd90000bu8fu2unhbrq82b6lleg_h264_540p_1795669",
+                "data_size": 2032473,
+                "file_cs": "c:0-11096-2279"
+            },
+            "cdn_url_expired": 1603444432,
+            "animated_cover": {
+                "uri": "tos-cn-p-0015/557f16bebff547b9aa40d9f5cf2a35d1_1603338018",
+                "url_list": ["https://p3-dy-ipv6.byteimg.com/obj/tos-cn-p-0015/557f16bebff547b9aa40d9f5cf2a35d1_1603338018?from=2563711402_large\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=dynamic_cover\u0026l=202010231613430101980662181200B8D3", "https://p26-dy.byteimg.com/obj/tos-cn-p-0015/557f16bebff547b9aa40d9f5cf2a35d1_1603338018?from=2563711402_large\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=dynamic_cover\u0026l=202010231613430101980662181200B8D3", "https://p9-dy.byteimg.com/obj/tos-cn-p-0015/557f16bebff547b9aa40d9f5cf2a35d1_1603338018?from=2563711402_large\u0026s=PackSourceEnum_MUSIC_AWEME\u0026se=false\u0026sh=\u0026sc=dynamic_cover\u0026l=202010231613430101980662181200B8D3"]
+            },
+            "need_set_token": false,
+            "is_callback": true,
+            "tags": null,
+            "use_static_cover": true,
+            "big_thumbs": null,
+            "is_bytevc1": 1
+        },
+        "share_url": "https://www.iesdouyin.com/share/video/6886284323100560653/?region=CN\u0026mid=6886284340351830797\u0026u_code=13eg0kl67cll\u0026titleType=title\u0026did=70148396331\u0026iid=4380078136113799",
+        "user_digged": 0,
+        "statistics": {
+            "aweme_id": "6886284323100560653",
+            "comment_count": 199,
+            "digg_count": 330142,
+            "download_count": 8379,
+            "play_count": 0,
+            "share_count": 7491,
+            "forward_count": 559,
+            "lose_count": 0,
+            "lose_comment_count": 0,
+            "whatsapp_share_count": 0
+        },
+        "status": {
+            "aweme_id": "6886284323100560653",
+            "is_delete": false,
+            "allow_share": true,
+            "allow_comment": true,
+            "is_private": false,
+            "with_goods": false,
+            "private_status": 0,
+            "with_fusion_goods": false,
+            "in_reviewing": false,
+            "reviewed": 1,
+            "self_see": false,
+            "is_prohibited": false,
+            "download_status": 0,
+            "review_result": {
+                "review_status": 0
+            },
+            "dont_share_status": 0,
+            "video_hide_search": 0
+        },
+        "rate": 12,
+        "text_extra": [],
+        "is_top": 0,
+        "label_top": {
+            "uri": "c150000f34767e2cb56",
+            "url_list": ["https://p29-dy.byteimg.com/obj/c150000f34767e2cb56?from=2563711402", "https://p6-dy-ipv6.byteimg.com/obj/c150000f34767e2cb56?from=2563711402", "https://p9-dy.byteimg.com/obj/c150000f34767e2cb56?from=2563711402"],
+            "width": 720,
+            "height": 720
+        },
+        "share_info": {
+            "share_url": "https://www.iesdouyin.com/share/video/6886284323100560653/?region=CN\u0026mid=6886284340351830797\u0026u_code=13eg0kl67cll\u0026titleType=title\u0026did=70148396331\u0026iid=4380078136113799",
+            "share_weibo_desc": "#在抖音，记录美好生活#22日，四川北川发生4.7级地震，北川永昌小学仅用2分钟疏散2670名学生！",
+            "share_desc": "在抖音，记录美好生活",
+            "share_title": "22日，四川北川发生4.7级地震，北川永昌小学仅用2分钟疏散2670名学生！",
+            "bool_persist": 0,
+            "share_title_myself": "",
+            "share_title_other": "",
+            "share_link_desc": "22日，四川北川发生4.7级地震，北川永昌小学仅用2分钟疏散2670名学生！  %s 复制此链接，打开抖音，直接观看视频！",
+            "share_signature_url": "",
+            "share_signature_desc": "",
+            "share_quote": "",
+            "share_desc_info": "#在抖音，记录美好生活#22日，四川北川发生4.7级地震，北川永昌小学仅用2分钟疏散2670名学生！"
+        },
+        "distance": "",
+        "label_music_starter": {
+            "uri": "2bda001d8aa1297d3df7",
+            "url_list": ["https://p3-dy-ipv6.byteimg.com/obj/2bda001d8aa1297d3df7?from=2563711402", "https://p1-dy-ipv6.byteimg.com/obj/2bda001d8aa1297d3df7?from=2563711402", "https://p29-dy.byteimg.com/obj/2bda001d8aa1297d3df7?from=2563711402"],
+            "width": 720,
+            "height": 720
+        },
+        "video_labels": [],
+        "is_vr": false,
+        "is_ads": false,
+        "duration": 9055,
+        "aweme_type": 0,
+        "is_fantasy": false,
+        "cmt_swt": false,
+        "image_infos": null,
+        "risk_infos": {
+            "vote": false,
+            "warn": false,
+            "risk_sink": false,
+            "type": 0,
+            "content": ""
+        },
+        "is_relieve": false,
+        "sort_label": "",
+        "position": null,
+        "uniqid_position": null,
+        "comment_list": null,
+        "author_user_id": 98680217165,
+        "bodydance_score": 0,
+        "geofencing": [],
+        "is_hash_tag": 1,
+        "is_pgcshow": false,
+        "region": "CN",
+        "video_text": [],
+        "vr_type": 0,
+        "collect_stat": 0,
+        "label_top_text": null,
+        "promotions": [],
+        "group_id": "6886284323100560653",
+        "prevent_download": false,
+        "nickname_position": null,
+        "challenge_position": null,
+        "item_comment_settings": 0,
+        "micro_app_info": {
+            "app_id": "tte1ee97537ed50431",
+            "app_name": "观观爆料箱",
+            "icon": "https://sf3-ttcdn-tos.pstatp.com/img/developer/app/tte1ee97537ed50431/iconf5e5b1b~144x144.jpeg",
+            "orientation": 0,
+            "schema": "sslocal://microapp?version=v2\u0026app_id=tte1ee97537ed50431\u0026scene=0\u0026version_type=current\u0026start_page=pages%2Findex%2Findex\u0026meta=%7B%22icon%22%3A%22https%3A%2F%2Fsf3-ttcdn-tos.pstatp.com%2Fimg%2Fdeveloper%2Fapp%2Ftte1ee97537ed50431%2Ficonf5e5b1b~144x144.jpeg%22%2C%22name%22%3A%22%E8%A7%82%E8%A7%82%E7%88%86%E6%96%99%E7%AE%B1%22%2C%22orientation%22%3A0%7D\u0026extra=%7B%22event_extra%22%3A%7B%22group_id%22%3A6886284323100560653%7D%7D\u0026bdpsum=5d21554",
+            "state": 1,
+            "summary": "用户通过小程序上传自己拍摄的内容到四川观察投稿箱",
+            "type": 1,
+            "description": "投给四川观察，让更多人看到!",
+            "title": "投稿给《四川观察》戳这里！"
+        },
+        "with_promotional_music": false,
+        "xigua_task": {
+            "is_xigua_task": false
+        },
+        "long_video": null,
+        "item_duet": 0,
+        "item_react": 0,
+        "label_music_starter_text": "首发",
+        "without_watermark": false,
+        "desc_language": "zh",
+        "interaction_stickers": null,
+        "misc_info": "{\"ocr_location\":\"{\\\"x_max\\\":0.9063611111111112,\\\"x_min\\\":0.09016666666666667,\\\"y_max\\\":0.20418238993710694,\\\"y_min\\\":0.06729559748427673}\"}",
+        "origin_comment_ids": null,
+        "commerce_config_data": null,
+        "distribute_type": 1,
+        "video_control": {
+            "allow_download": true,
+            "share_type": 1,
+            "show_progress_bar": 0,
+            "draft_progress_bar": 0,
+            "allow_duet": true,
+            "allow_react": true,
+            "prevent_download_type": 0,
+            "allow_dynamic_wallpaper": true,
+            "timer_status": 1,
+            "allow_music": true,
+            "allow_stitch": true
+        },
+        "aweme_control": {
+            "can_forward": true,
+            "can_share": true,
+            "can_comment": true,
+            "can_show_comment": true
+        },
+        "has_vs_entry": false,
+        "commerce_info": {},
+        "anchor_info": {
+            "type": 4,
+            "id": "tte1ee97537ed50431",
+            "icon": {
+                "uri": "2ea5a00045c15deebd4aa",
+                "url_list": ["https://p3-dy-ipv6.byteimg.com/obj/2ea5a00045c15deebd4aa?from=2563711402", "https://p6-dy-ipv6.byteimg.com/obj/2ea5a00045c15deebd4aa?from=2563711402", "https://p1-dy-ipv6.byteimg.com/obj/2ea5a00045c15deebd4aa?from=2563711402"],
+                "width": 720,
+                "height": 720
+            },
+            "title": "投稿给《四川观察》戳这里！",
+            "open_url": "sslocal://microapp?version=v2\u0026app_id=tte1ee97537ed50431\u0026scene=0\u0026version_type=current\u0026start_page=pages%2Findex%2Findex\u0026meta=%7B%22icon%22%3A%22https%3A%2F%2Fsf3-ttcdn-tos.pstatp.com%2Fimg%2Fdeveloper%2Fapp%2Ftte1ee97537ed50431%2Ficonf5e5b1b~144x144.jpeg%22%2C%22name%22%3A%22%E8%A7%82%E8%A7%82%E7%88%86%E6%96%99%E7%AE%B1%22%2C%22orientation%22%3A0%7D\u0026extra=%7B%22event_extra%22%3A%7B%22group_id%22%3A6886284323100560653%7D%7D\u0026bdpsum=5d21554",
+            "extra": "{\"app_id\":\"tte1ee97537ed50431\",\"app_name\":\"观观爆料箱\",\"icon\":\"https://sf3-ttcdn-tos.pstatp.com/img/developer/app/tte1ee97537ed50431/iconf5e5b1b~144x144.jpeg\",\"orientation\":0,\"schema\":\"sslocal://microapp?version=v2\\u0026app_id=tte1ee97537ed50431\\u0026scene=0\\u0026version_type=current\\u0026start_page=pages%2Findex%2Findex\\u0026meta=%7B%22icon%22%3A%22https%3A%2F%2Fsf3-ttcdn-tos.pstatp.com%2Fimg%2Fdeveloper%2Fapp%2Ftte1ee97537ed50431%2Ficonf5e5b1b~144x144.jpeg%22%2C%22name%22%3A%22%E8%A7%82%E8%A7%82%E7%88%86%E6%96%99%E7%AE%B1%22%2C%22orientation%22%3A0%7D\\u0026extra=%7B%22event_extra%22%3A%7B%22group_id%22%3A6886284323100560653%7D%7D\\u0026bdpsum=5d21554\",\"state\":1,\"summary\":\"用户通过小程序上传自己拍摄的内容到四川观察投稿箱\",\"type\":1,\"description\":\"投给四川观察，让更多人看到!\",\"title\":\"投稿给《四川观察》戳这里！\"}"
+        },
+        "need_vs_entry": true,
+        "is_preview": 0,
+        "anchors": null,
+        "hybrid_label": null,
+        "geofencing_regions": null,
+        "have_dashboard": false,
+        "poi_patch_info": {
+            "item_patch_poi_prompt_mark": 0
+        },
+        "is_story": 0,
+        "item_stitch": 0,
+        "cover_labels": null,
+        "story_ttl": 0,
+        "is_first_video": false
+    }
+}
