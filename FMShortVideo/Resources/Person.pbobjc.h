@@ -65,12 +65,15 @@ GPB_FINAL @interface Person : GPBMessage
 #pragma mark - PersonM
 
 typedef GPB_ENUM(PersonM_FieldNumber) {
-  PersonM_FieldNumber_Gender = 3,
+  PersonM_FieldNumber_Namerrr = 1,
+  PersonM_FieldNumber_Agerr = 2,
 };
 
 GPB_FINAL @interface PersonM : GPBMessage
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *gender;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *namerrr;
+
+@property(nonatomic, readwrite) int32_t agerr;
 
 @end
 

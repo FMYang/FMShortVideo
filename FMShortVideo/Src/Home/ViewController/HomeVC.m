@@ -9,6 +9,7 @@
 #import "HomeNetwork.h"
 #import "VideoCell.h"
 #import "FMPlayerView.h"
+#import "ZYCameraPlayerView.h"
 
 #import "DouyinService.h"
 
@@ -47,7 +48,7 @@ static const int pageSize = 20;
 @property (nonatomic, assign) NSInteger page;
 @property (nonatomic, strong) NSMutableArray<VideoModel *> *dataSource;
 @property (nonatomic, strong) UITableView *listTableView;
-@property (nonatomic, strong) FMPlayerView *playerView;
+@property (nonatomic, strong) ZYCameraPlayerView *playerView;
 @property (nonatomic, assign) NSInteger currentIndex;
 @property (nonatomic, assign) NSInteger beginScrollIndex;
 @property (nonatomic, assign) CGFloat velocity;
@@ -63,47 +64,46 @@ static const int pageSize = 20;
     self.view.backgroundColor = UIColor.blackColor;
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkAuthSuccess) name:@"networkAuthSuccess" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkDidChange) name:AFNetworkingReachabilityDidChangeNotification object:nil];
     
     self.page = 1;
     
     [self setupUI];
     
-    [self readLocalData];
+//    [self readLocalData];
     
-    [self fetchData];
+    dispatch_after(DISPATCH_TIME_NOW + 0.25, dispatch_get_main_queue(), ^{
+        [self fetchData];
+    });
     
 //    [DouyinService getDouyinRecommendList];
     
 //    [self paraseDouyinData];
 }
 
+- (void)networkDidChange {
+    if(AFNetworkReachabilityManager.sharedManager.reachable) {
+        self.playerView.videoUrl = self.playerView.videoUrl;
+    }
+}
+
 - (void)paraseDouyinData {
-//    NSString *documentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES).firstObject;
-//    NSString *path = [documentPath stringByAppendingPathComponent:@"douyin.protobuf"];
-//    NSData *data = [[NSFileManager defaultManager] contentsAtPath:path];
-//    NSLog(@"%ld", data.length);
-//
-//    NSError *err;
-//    Feed *feed = [Feed parseFromData:data error:&err];
-//    if(err) {
-//        NSLog(@"解析失败");
-//    } else {
-//        NSLog(@"解析成功 %@", feed);
-//    }
-    
-//    Person *person = [[Person alloc] init];
-//    person.name = @"hello";
-//    person.age = 1;
-//    person.gender = @"1";
-//
-//    NSData *data = person.data;
-//
-//    PersonM *newPerson = [PersonM parseFromData:data error:nil];
-//    NSLog(@"%@", newPerson.gender);
+    NSString *documentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES).firstObject;
+    NSString *path = [documentPath stringByAppendingPathComponent:@"douyin.protobuf"];
+    NSData *data = [[NSFileManager defaultManager] contentsAtPath:path];
+    NSLog(@"%ld", data.length);
+
+    NSError *err;
+    Feed *feed = [Feed parseFromData:data error:&err];
+    if(err) {
+        NSLog(@"解析失败");
+    } else {
+        NSLog(@"解析成功");
+    }
 }
 
 - (FollowFeed *)readLocalData {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"follow_feed" ofType:nil];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"douyin_userVideo" ofType:nil];
     NSData *data = [[NSFileManager defaultManager] contentsAtPath:path];
     FollowFeed *feed = [FollowFeed mj_objectWithKeyValues:data];
     
@@ -136,7 +136,32 @@ static const int pageSize = 20;
         [self.listTableView reloadData];
         [self playVideo:0]; // 请求完成播放第0个视频
     } fail:^(FMError * _Nonnull error) {
-        NSLog(@"%@", error.error);
+        NSString *errmsg = @"";
+        switch (error.reason) {
+            case FMErrorReasonNetworkLost:
+                errmsg = @"没有网络";
+                break;
+                
+            case FMErrorReasonDataIsNil:
+                errmsg = @"没有数据";
+                break;
+                
+            case FMErrorReasonClientError:
+                errmsg = @"客户端错误";
+                break;
+                
+            case FMErrorReasonServiceError:
+                errmsg = @"服务端错误";
+                break;
+                
+            case FMErrorReasonTimeout:
+                errmsg = @"请求超时";
+                break;
+                
+            default:
+                break;
+        }
+        NSLog(@"%@", errmsg);
     }];
 }
 
@@ -161,10 +186,6 @@ static const int pageSize = 20;
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     self.beginScrollIndex = self.currentIndex;
-    
-//    CGPoint velocity = [scrollView.panGestureRecognizer velocityInView:scrollView];
-//    self.velocity = velocity.y;
-//    NSLog(@"fm y轴平移的速度 = %@", NSStringFromCGPoint(velocity));
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
@@ -175,37 +196,6 @@ static const int pageSize = 20;
         [self playVideo:self.currentIndex]; // 滑动停止播放当前视频
         }
     }
-    
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//        // 平移的距离
-//        CGPoint translatedPoint = [scrollView.panGestureRecognizer translationInView:scrollView];
-////        CGPoint velocity = [scrollView.panGestureRecognizer velocityInView:scrollView];
-//        NSLog(@"fm y轴平移的距离 = %@", NSStringFromCGPoint(translatedPoint));
-////        NSLog(@"fm y轴平移的速度 = %@", NSStringFromCGPoint(velocity));
-//        if((translatedPoint.y < -kScreenH/2 || (self.velocity < 0 && self.velocity < -1200)) && self.currentIndex < (self.dataSource.count - 1)) {
-//            NSLog(@"向下翻页");
-//            self.currentIndex ++;   //向下滑动索引递增
-//        }
-//        if((translatedPoint.y > kScreenH/2 || (self.velocity > 0 && self.velocity > 800)) && self.currentIndex > 0) {
-//            NSLog(@"向上翻页");
-//            self.currentIndex --;   //向上滑动索引递减
-//        }
-//
-//        scrollView.panGestureRecognizer.enabled = NO;
-//        NSLog(@"fm beginScrollIndex = %d, currentIndex = %d", self.beginScrollIndex, self.currentIndex);
-//
-//        [UIView animateWithDuration:0.15
-//                              delay:0.0
-//                            options:UIViewAnimationOptionCurveEaseOut animations:^{
-//            //UITableView滑动到指定cell
-//            [self.listTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.currentIndex inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
-//            if(self.currentIndex != self.beginScrollIndex) {
-//                [self playVideo:self.currentIndex]; // 滑动停止播放当前视频
-//            }
-//        } completion:^(BOOL finished) {
-//            scrollView.panGestureRecognizer.enabled = YES;
-//        }];
-//    });
 }
 
 - (void)playVideo:(NSInteger)row {
@@ -235,7 +225,7 @@ static const int pageSize = 20;
     [self.view addSubview:self.listTableView];
     [self.listTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.mas_equalTo(0);
-        make.bottom.mas_equalTo(self.view.mas_bottom).offset(-kBottomSafeHeight);
+        make.height.mas_equalTo(kContentHeight);
     }];
 }
 
@@ -268,9 +258,9 @@ static const int pageSize = 20;
     return _listTableView;
 }
 
-- (FMPlayerView *)playerView {
+- (ZYCameraPlayerView *)playerView {
     if(!_playerView) {
-        _playerView = [[FMPlayerView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, kContentHeight)];
+        _playerView = [[ZYCameraPlayerView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, kContentHeight)];
         _playerView.volume = 0.5;
     }
     return _playerView;

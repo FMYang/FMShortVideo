@@ -43,7 +43,7 @@
     
     [self.subTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.contentView).offset(20);
-        make.bottom.equalTo(self.contentView).offset(-40);
+        make.bottom.equalTo(self.contentView);
         make.right.equalTo(self.contentView).offset(-20);
     }];
 }

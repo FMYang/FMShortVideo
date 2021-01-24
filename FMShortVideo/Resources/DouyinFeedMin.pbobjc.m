@@ -47,18 +47,16 @@ static GPBFileDescriptor *DouyinFeedMinRoot_FileDescriptor(void) {
 @implementation Feed
 
 @dynamic statusCode;
-@dynamic statusMsg;
-@dynamic cursor;
-@dynamic level;
+@dynamic minCursor;
+@dynamic maxCursor;
 @dynamic hasMore;
 
 typedef struct Feed__storage_ {
   uint32_t _has_storage_[1];
-  int32_t statusCode;
-  int32_t cursor;
-  int32_t level;
-  int32_t hasMore;
-  NSString *statusMsg;
+  double statusCode;
+  double minCursor;
+  double maxCursor;
+  double hasMore;
 } Feed__storage_;
 
 // This method is threadsafe because it is initially called
@@ -74,43 +72,34 @@ typedef struct Feed__storage_ {
         .hasIndex = 0,
         .offset = (uint32_t)offsetof(Feed__storage_, statusCode),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldClearHasIvarOnZero),
-        .dataType = GPBDataTypeInt32,
+        .dataType = GPBDataTypeDouble,
       },
       {
-        .name = "statusMsg",
+        .name = "minCursor",
         .dataTypeSpecific.clazz = Nil,
-        .number = Feed_FieldNumber_StatusMsg,
+        .number = Feed_FieldNumber_MinCursor,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(Feed__storage_, statusMsg),
+        .offset = (uint32_t)offsetof(Feed__storage_, minCursor),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldClearHasIvarOnZero),
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeDouble,
       },
       {
-        .name = "cursor",
+        .name = "maxCursor",
         .dataTypeSpecific.clazz = Nil,
-        .number = Feed_FieldNumber_Cursor,
+        .number = Feed_FieldNumber_MaxCursor,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(Feed__storage_, cursor),
+        .offset = (uint32_t)offsetof(Feed__storage_, maxCursor),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldClearHasIvarOnZero),
-        .dataType = GPBDataTypeInt32,
-      },
-      {
-        .name = "level",
-        .dataTypeSpecific.clazz = Nil,
-        .number = Feed_FieldNumber_Level,
-        .hasIndex = 3,
-        .offset = (uint32_t)offsetof(Feed__storage_, level),
-        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldClearHasIvarOnZero),
-        .dataType = GPBDataTypeInt32,
+        .dataType = GPBDataTypeDouble,
       },
       {
         .name = "hasMore",
         .dataTypeSpecific.clazz = Nil,
         .number = Feed_FieldNumber_HasMore,
-        .hasIndex = 4,
+        .hasIndex = 3,
         .offset = (uint32_t)offsetof(Feed__storage_, hasMore),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldClearHasIvarOnZero),
-        .dataType = GPBDataTypeInt32,
+        .dataType = GPBDataTypeDouble,
       },
     };
     GPBDescriptor *localDescriptor =

@@ -69,6 +69,15 @@
         }
     }];
     
+    NSLog(@"2、dataTaskWithRequest");
+    // 网络状态判断
+    if(![self networkReachable]) {
+        FMError *error = [[FMError alloc] init];
+        error.reason = FMErrorReasonNetworkLost;
+        fail(error);
+        return nil;
+    }
+    
     // mock数据处理
     if(request.sampleData) {
         FMResponse *fmResponse = [self requestCompletaion:request success:success fail:fail];
@@ -181,6 +190,7 @@
         fmError.code = @"-1";
         fmError.message = @"数据错误";
         fmError.data = responseObject;
+        fmError.reason = FMErrorReasonDataIsNil;
         fail(fmError);
     }
     return nil;
@@ -208,19 +218,24 @@
 
     FMResponse *fmResponse = nil;
     FMError *fmError = nil;
+    
+    NSLog(@"httpCode = %ld", ((NSHTTPURLResponse *)response).statusCode);
 
     if(error) {
-        if([error.domain isEqualToString:NSURLErrorDomain]) {
-            if(error.code == NSURLErrorTimedOut) {
-                // timeout
-            }
-        }
-        
         // http请求失败处理
         fmError = [FMError processError:error];
         fmError.code = responseCode;
         fmError.message = message;
         fmError.data = data;
+        fmError.reason = FMErrorReasonServiceError;
+
+        if([error.domain isEqualToString:NSURLErrorDomain]) {
+            if(error.code == NSURLErrorTimedOut) {
+                // timeout
+                fmError.reason = FMErrorReasonTimeout;
+            }
+        }
+        
         fail(fmError);
     } else {
         // http请求成功，业务逻辑处理
@@ -294,7 +309,8 @@
         }
     };
     
-    // multipartFormRequestWithMethod最后会调用requestByFinalizingMultipartFormData设置contentType为"multipart/form-data; boundary="
+    // multipartFormRequestWithMethod最后会调用requestByFinalizingMultipartFormData
+    // 设置contentType为"multipart/form-data; boundary="
     NSMutableURLRequest *uploadRequest = [[FMHttpManager.shared requestSerializer:request] multipartFormRequestWithMethod:@"POST" URLString:[[NSURL URLWithString:request.path relativeToURL:baseUrl] absoluteString] parameters:request.params constructingBodyWithBlock:bodyBlock error:&serializationError];
     
     [FMHttpManager.shared addHttpHeader:uploadRequest fmRequest:request];

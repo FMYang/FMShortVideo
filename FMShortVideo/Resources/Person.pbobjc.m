@@ -113,11 +113,13 @@ typedef struct Person__storage_ {
 
 @implementation PersonM
 
-@dynamic gender;
+@dynamic namerrr;
+@dynamic agerr;
 
 typedef struct PersonM__storage_ {
   uint32_t _has_storage_[1];
-  NSString *gender;
+  int32_t agerr;
+  NSString *namerrr;
 } PersonM__storage_;
 
 // This method is threadsafe because it is initially called
@@ -127,13 +129,22 @@ typedef struct PersonM__storage_ {
   if (!descriptor) {
     static GPBMessageFieldDescription fields[] = {
       {
-        .name = "gender",
+        .name = "namerrr",
         .dataTypeSpecific.clazz = Nil,
-        .number = PersonM_FieldNumber_Gender,
+        .number = PersonM_FieldNumber_Namerrr,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PersonM__storage_, gender),
+        .offset = (uint32_t)offsetof(PersonM__storage_, namerrr),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldClearHasIvarOnZero),
         .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "agerr",
+        .dataTypeSpecific.clazz = Nil,
+        .number = PersonM_FieldNumber_Agerr,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(PersonM__storage_, agerr),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldClearHasIvarOnZero),
+        .dataType = GPBDataTypeInt32,
       },
     };
     GPBDescriptor *localDescriptor =

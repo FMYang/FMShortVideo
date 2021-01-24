@@ -10,6 +10,7 @@
 		889123ED2541F1720024E049 /* douyin_feed.proto in Sources */ = {isa = PBXBuildFile; fileRef = 889123EB2541F1720024E049 /* douyin_feed.proto */; };
 		889123EE2541F1720024E049 /* douyin_feed in Resources */ = {isa = PBXBuildFile; fileRef = 889123EC2541F1720024E049 /* douyin_feed */; };
 		DD6845058E62341EC8E8A03B /* libPods-FMShortVideo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C004F412050BC91AE8296B3D /* libPods-FMShortVideo.a */; };
+		E44EA1D425BAD2FA0017FF30 /* ZYCameraPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E44EA1D325BAD2FA0017FF30 /* ZYCameraPlayerView.m */; };
 		E4B76CF5253EBC4E00501F05 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B76CF4253EBC4E00501F05 /* AppDelegate.m */; };
 		E4B76D00253EBC5300501F05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4B76CFF253EBC5300501F05 /* Assets.xcassets */; };
 		E4B76D03253EBC5300501F05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4B76D01253EBC5300501F05 /* LaunchScreen.storyboard */; };
@@ -29,6 +30,7 @@
 		E4B76DA42542CA8A00501F05 /* douyin_userVideo in Resources */ = {isa = PBXBuildFile; fileRef = E4B76DA32542CA8A00501F05 /* douyin_userVideo */; };
 		E4B76DA82542CD8F00501F05 /* follow_feed in Resources */ = {isa = PBXBuildFile; fileRef = E4B76DA72542CD8F00501F05 /* follow_feed */; };
 		E4B76DAE2542DE3900501F05 /* FollowFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B76DAD2542DE3900501F05 /* FollowFeed.m */; };
+		E4B76DB32546613700501F05 /* douyin.protobuf in Resources */ = {isa = PBXBuildFile; fileRef = E4B76DB22546613600501F05 /* douyin.protobuf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		89F7A8AC1E5EE673DBCF46E3 /* Pods-FMShortVideo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMShortVideo.debug.xcconfig"; path = "Target Support Files/Pods-FMShortVideo/Pods-FMShortVideo.debug.xcconfig"; sourceTree = "<group>"; };
 		9861238F409EB91114551610 /* Pods-FMShortVideo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMShortVideo.release.xcconfig"; path = "Target Support Files/Pods-FMShortVideo/Pods-FMShortVideo.release.xcconfig"; sourceTree = "<group>"; };
 		C004F412050BC91AE8296B3D /* libPods-FMShortVideo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FMShortVideo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E44EA1D225BAD2FA0017FF30 /* ZYCameraPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYCameraPlayerView.h; sourceTree = "<group>"; };
+		E44EA1D325BAD2FA0017FF30 /* ZYCameraPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYCameraPlayerView.m; sourceTree = "<group>"; };
 		E4B76CF0253EBC4E00501F05 /* FMShortVideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FMShortVideo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B76CF3253EBC4E00501F05 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E4B76CF4253EBC4E00501F05 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -71,6 +75,7 @@
 		E4B76DA72542CD8F00501F05 /* follow_feed */ = {isa = PBXFileReference; lastKnownFileType = text; path = follow_feed; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		E4B76DAC2542DE3900501F05 /* FollowFeed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FollowFeed.h; sourceTree = "<group>"; };
 		E4B76DAD2542DE3900501F05 /* FollowFeed.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FollowFeed.m; sourceTree = "<group>"; };
+		E4B76DB22546613600501F05 /* douyin.protobuf */ = {isa = PBXFileReference; lastKnownFileType = file; path = douyin.protobuf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +102,7 @@
 		889123EA2541F1720024E049 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E4B76DB22546613600501F05 /* douyin.protobuf */,
 				E4B76D9C254293EE00501F05 /* Person.pbobjc.h */,
 				E4B76D9B254293EE00501F05 /* Person.pbobjc.m */,
 				E4B76D98254293A200501F05 /* person.proto */,
@@ -241,6 +247,8 @@
 			children = (
 				E4B76D4D253ED85600501F05 /* FMPlayerView.h */,
 				E4B76D4E253ED85600501F05 /* FMPlayerView.m */,
+				E44EA1D225BAD2FA0017FF30 /* ZYCameraPlayerView.h */,
+				E44EA1D325BAD2FA0017FF30 /* ZYCameraPlayerView.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -317,6 +325,7 @@
 			files = (
 				E4B76D03253EBC5300501F05 /* LaunchScreen.storyboard in Resources */,
 				E4B76DA42542CA8A00501F05 /* douyin_userVideo in Resources */,
+				E4B76DB32546613700501F05 /* douyin.protobuf in Resources */,
 				E4B76DA82542CD8F00501F05 /* follow_feed in Resources */,
 				E4B76D00253EBC5300501F05 /* Assets.xcassets in Resources */,
 				889123EE2541F1720024E049 /* douyin_feed in Resources */,
@@ -371,6 +380,7 @@
 				E4B76D822542740000501F05 /* douyin_feed_min.proto in Sources */,
 				E4B76D06253EBC5300501F05 /* main.m in Sources */,
 				E4B76D35253EC8BA00501F05 /* VideoModel.m in Sources */,
+				E44EA1D425BAD2FA0017FF30 /* ZYCameraPlayerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

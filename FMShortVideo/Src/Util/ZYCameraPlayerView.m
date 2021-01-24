@@ -5,7 +5,7 @@
 //  Created by yfm on 2020/10/20.
 //
 
-#import "FMPlayerView.h"
+#import "ZYCameraPlayerView.h"
 
 static const NSString *PlayerItemStatusContext;
 
@@ -22,7 +22,7 @@ typedef NS_ENUM(NSUInteger, ZYVideoOrientation) {
     ZYVideoOrientationLandscapeRight
 };
 
-@interface FMPlayerView() {
+@interface ZYCameraPlayerView() {
     AVURLAsset *_asset;
     AVPlayerItem *_playerItem;
     AVPlayer *_player;
@@ -33,7 +33,7 @@ typedef NS_ENUM(NSUInteger, ZYVideoOrientation) {
 }
 
 // 播放状态
-@property (nonatomic, assign) FMPlayerStatus playStatus;
+@property (nonatomic, assign) ZYCameraPlayerStatus playStatus;
 // 时间监听器
 @property (nonatomic, strong) id timeObserver;
 // pan手势方向
@@ -55,7 +55,7 @@ typedef NS_ENUM(NSUInteger, ZYVideoOrientation) {
 
 @end
 
-@implementation FMPlayerView
+@implementation ZYCameraPlayerView
 
 #pragma mark - life cycle
 - (void)dealloc {
@@ -123,15 +123,25 @@ typedef NS_ENUM(NSUInteger, ZYVideoOrientation) {
 }
 
 #pragma mark - setter
-- (void)setAsset:(AVURLAsset *)asset {
-    if(!asset || asset == _asset) return;
-    _asset = asset;
+- (void)setVideoUrl:(NSURL *)videoUrl {
+    if(!videoUrl.absoluteURL) return;
+    _videoUrl = videoUrl;
+    _asset = [AVURLAsset assetWithURL:videoUrl];
     _isFirstPlay = YES;
     [self reset];
     [self prepareToPlay];
 }
 
-- (void)setPlayStatus:(FMPlayerStatus)playStatus {
+- (void)setAsset:(AVURLAsset *)asset {
+    if(!asset || asset == _asset) return;
+    _asset = asset;
+    _isFirstPlay = YES;
+    _videoUrl = asset.URL;
+    [self reset];
+    [self prepareToPlay];
+}
+
+- (void)setPlayStatus:(ZYCameraPlayerStatus)playStatus {
     _playStatus = playStatus;
     if(self.playStatusDidChanged) {
         self.playStatusDidChanged(playStatus);
@@ -159,11 +169,11 @@ typedef NS_ENUM(NSUInteger, ZYVideoOrientation) {
 
 #pragma mark - gesture
 - (void)tapAction {
-    if(self.playStatus == FMPlayerStatus_playing) {
-        self.playStatus = FMPlayerStatus_pause;
+    if(self.playStatus == ZYCameraPlayerStatus_playing) {
+        self.playStatus = ZYCameraPlayerStatus_pause;
         [_player pause];
     } else {
-        self.playStatus = FMPlayerStatus_playing;
+        self.playStatus = ZYCameraPlayerStatus_playing;
         [_player play];
     }
 }
@@ -214,7 +224,7 @@ typedef NS_ENUM(NSUInteger, ZYVideoOrientation) {
             if(self.direction == ZYPanDirectionHorizontal) {
                 [self seekToTime:self.sumTime completionHandler:^(BOOL finished) {
                     if(finished) {
-                        self.playStatus = FMPlayerStatus_pause;
+                        self.playStatus = ZYCameraPlayerStatus_pause;
                         [self play];
                     }
                 }];
@@ -227,8 +237,6 @@ typedef NS_ENUM(NSUInteger, ZYVideoOrientation) {
         default:
             break;
     }
-    
-    NSLog(@"进度改变 %f %f", self.sumTime, self.totalDuration);
 }
 
 #pragma mark - player action
@@ -240,6 +248,7 @@ typedef NS_ENUM(NSUInteger, ZYVideoOrientation) {
     [_playerLayer removeFromSuperlayer];
     [_player replaceCurrentItemWithPlayerItem:nil];
     _player = nil;
+    self.failLabel.hidden = YES;
 }
             
 - (void)prepareToPlay {
@@ -253,7 +262,13 @@ typedef NS_ENUM(NSUInteger, ZYVideoOrientation) {
     // 创建渲染层
     _playerLayer = [AVPlayerLayer playerLayerWithPlayer:_player];
     // 填充屏幕，保持宽高比，超过的部分会被裁剪
-    _playerLayer.videoGravity = AVLayerVideoGravityResizeAspect;
+    _playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+
+    // 旋转视频
+    if(!([self.videoUrl.scheme hasPrefix:@"http"] || [self.videoUrl.scheme hasPrefix:@"https"])) {
+        // 远程url不旋转，否则会阻塞UI
+        [self makePlayerLayerRotation];
+    }
 
     [self.layer insertSublayer:_playerLayer atIndex:0];
 
@@ -267,17 +282,44 @@ typedef NS_ENUM(NSUInteger, ZYVideoOrientation) {
     [self addPlayerItemTimeObserver];
 }
 
+// 旋转视频
+- (void)makePlayerLayerRotation {
+    CGFloat angle = 0;
+    
+    ZYVideoOrientation orientation = [self orientationFromVideoURL:self.videoUrl];
+    switch (orientation) {
+        case ZYVideoOrientationPortrait:
+            angle = -M_PI_2;
+            break;
+            
+        case ZYVideoOrientationPortraitUpsideDown:
+            angle = M_PI_2;
+            break;
+            
+        case ZYVideoOrientationLandscapeRight:
+        case ZYVideoOrientationLandscapeLeft:
+            angle = 0;
+            break;
+            
+        default:
+            break;
+    }
+    _playerLayer.transform = CATransform3DMakeRotation(angle, 0, 0, 1);
+    [self setNeedsLayout];
+}
+
+
 - (void)play {
     NSLog(@"fm play");
-    if(self.playStatus != FMPlayerStatus_playing) {
-        self.playStatus = FMPlayerStatus_playing;
+    if(self.playStatus != ZYCameraPlayerStatus_playing) {
+        self.playStatus = ZYCameraPlayerStatus_playing;
         [_player play];
     }
 }
 
 - (void)pause {
-    if(self.playStatus == FMPlayerStatus_playing) {
-        self.playStatus = FMPlayerStatus_pause;
+    if(self.playStatus == ZYCameraPlayerStatus_playing) {
+        self.playStatus = ZYCameraPlayerStatus_pause;
         [_player pause];
     }
 }
@@ -342,9 +384,9 @@ typedef NS_ENUM(NSUInteger, ZYVideoOrientation) {
     // 监听间隔0.5s
     CMTime interval = CMTimeMakeWithSeconds(0.5, NSEC_PER_SEC);
         
-    __weak FMPlayerView *weakSelf = self;
+    __weak ZYCameraPlayerView *weakSelf = self;
     void (^callback)(CMTime time) = ^(CMTime time) {
-        __strong FMPlayerView *strongSelf = weakSelf;
+        __strong ZYCameraPlayerView *strongSelf = weakSelf;
         if(strongSelf) {
             NSTimeInterval currentTime = CMTimeGetSeconds(time);
             NSTimeInterval duration = CMTimeGetSeconds(strongSelf->_playerItem.duration);
@@ -371,7 +413,7 @@ typedef NS_ENUM(NSUInteger, ZYVideoOrientation) {
         NSLog(@"播放状态改变 : %ld", (long)item.status);
         switch (item.status) {
             case AVPlayerItemStatusUnknown:
-                self.playStatus = FMPlayerStatus_unKnow;
+                self.playStatus = ZYCameraPlayerStatus_unKnow;
                 break;
 
             case AVPlayerItemStatusReadyToPlay: {
@@ -387,33 +429,27 @@ typedef NS_ENUM(NSUInteger, ZYVideoOrientation) {
 
             case AVPlayerItemStatusFailed:
                 NSLog(@"加载失败");
-                self.playStatus = FMPlayerStatus_fail;
+                self.playStatus = ZYCameraPlayerStatus_fail;
                 self.failLabel.hidden = NO;
                 break;
 
             default:
                 NSLog(@"未知错误");
-                self.playStatus = FMPlayerStatus_unKnow;
+                self.playStatus = ZYCameraPlayerStatus_unKnow;
                 self.failLabel.hidden = NO;
                 break;
         }
     } else if([keyPath isEqualToString:@"loadedTimeRanges"]) {
-        NSLog(@"缓存中");
         NSArray *timeRanges = [_playerItem loadedTimeRanges];
         // 缓存进度
         CMTimeRange timeRange = [timeRanges.firstObject CMTimeRangeValue];
         CMTime bufferTime = CMTimeRangeGetEnd(timeRange);
-        NSTimeInterval duration = CMTimeGetSeconds(bufferTime);
-        NSLog(@"缓冲时间 %f", duration);
         
         if(self.bufferTimeDidChanged) {
             NSTimeInterval duration = CMTimeGetSeconds(_playerItem.duration);
             NSTimeInterval curBufferTime = CMTimeGetSeconds(bufferTime);
             self.bufferTimeDidChanged(curBufferTime, duration);
         }
-
-        NSLog(@"ZF 计算缓存进度 %f", [self availableDuration]);
-        
     } else if([keyPath isEqualToString:@"playbackBufferEmpty"]) {
         [_indicatorView startAnimating];
         
@@ -425,11 +461,8 @@ typedef NS_ENUM(NSUInteger, ZYVideoOrientation) {
                 [self pause];
             }
         }
-        
-        NSLog(@"缓存为空");
     } else if([keyPath isEqualToString:@"playbackLikelyToKeepUp"]) {
         [_indicatorView stopAnimating];
-        NSLog(@"缓存可以在不停顿的情况下播放了");
         if(_playerItem.isPlaybackLikelyToKeepUp) {
             [self play];
         }
@@ -462,7 +495,7 @@ typedef NS_ENUM(NSUInteger, ZYVideoOrientation) {
 
 // 播放完成
 - (void)didFinishPlay:(NSNotification *)notify {
-    self.playStatus = FMPlayerStatus_finished;
+    self.playStatus = ZYCameraPlayerStatus_finished;
         
     [self seekToTime:0 completionHandler:nil];
 
@@ -485,5 +518,37 @@ typedef NS_ENUM(NSUInteger, ZYVideoOrientation) {
     }
     return _failLabel;
 }
+
+#pragma mark - expand
+// 获取视频方向
+- (ZYVideoOrientation)orientationFromVideoURL:(NSURL *)url {
+    AVAsset *asset = [AVAsset assetWithURL:url];
+    NSArray *tracks = [asset tracksWithMediaType:AVMediaTypeVideo];
+    if([tracks count] > 0) {
+        AVAssetTrack *videoTrack = [tracks objectAtIndex:0];
+        CGAffineTransform t = videoTrack.preferredTransform;
+       
+        if(t.a == 0 && t.b == 1.0 && t.c == -1.0 && t.d == 0) {
+            // Portrait
+            return ZYVideoOrientationPortrait;
+        } else if(t.a == 0 && t.b == -1.0 && t.c == 1.0 && t.d == 0) {
+            // PortraitUpsideDown
+            return ZYVideoOrientationPortraitUpsideDown;
+        } else if(t.a == 1.0 && t.b == 0 && t.c == 0 && t.d == 1.0) {
+            // LandscapeRight
+            return ZYVideoOrientationLandscapeRight;
+        } else if(t.a == -1.0 && t.b == 0 && t.c == 0 && t.d == -1.0) {
+            // LandscapeLeft
+            return ZYVideoOrientationLandscapeLeft;
+        }
+    }
+    
+    return ZYVideoOrientationPortrait;
+}
+
+- (void)setShouldAutoPlay:(BOOL)shouldAutoPlay {
+    _shouldAutoPlay = shouldAutoPlay;
+}
+
 
 @end
