@@ -18,7 +18,7 @@ PODS:
     - AFNetworking
   - Masonry (1.1.0)
   - MJExtension (3.2.2)
-  - Protobuf (3.13.0)
+  - MJRefresh (3.7.5)
   - SDWebImage (5.9.1):
     - SDWebImage/Core (= 5.9.1)
   - SDWebImage/Core (5.9.1)
@@ -27,7 +27,7 @@ DEPENDENCIES:
   - FMHttpRequest (from `FMShortVideo/`)
   - Masonry
   - MJExtension
-  - Protobuf
+  - MJRefresh
   - SDWebImage
 
 SPEC REPOS:
@@ -35,7 +35,7 @@ SPEC REPOS:
     - AFNetworking
     - Masonry
     - MJExtension
-    - Protobuf
+    - MJRefresh
     - SDWebImage
 
 EXTERNAL SOURCES:
@@ -47,9 +47,9 @@ SPEC CHECKSUMS:
   FMHttpRequest: 3f97988b9d66ae15ed402ecfda31d59843c2f3e7
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: d9b9c74cbdeb724c1e9ecbb157b318276e62e876
-  Protobuf: 3dac39b34a08151c6d949560efe3f86134a3f748
+  MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   SDWebImage: a990c053fff71e388a10f3357edb0be17929c9c5
 
-PODFILE CHECKSUM: bcfa4639082d87e0fb2b30320decc7d3b0aab6a9
+PODFILE CHECKSUM: 62d398a3ea313bb6270bdf6455a2f616c409ea69
 
-COCOAPODS: 1.9.2
+COCOAPODS: 1.10.1

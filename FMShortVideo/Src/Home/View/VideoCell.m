@@ -21,8 +21,8 @@
 }
 
 - (void)configCell:(VideoModel *)model {
-    self.titleLabel.text = model.name;
-    self.subTitleLabel.text = model.text;
+    self.titleLabel.text = model.title;
+    self.subTitleLabel.text = model.author;
     [self.coverImageView sd_setImageWithURL:[NSURL URLWithString:model.thumbnail]];
 }
 

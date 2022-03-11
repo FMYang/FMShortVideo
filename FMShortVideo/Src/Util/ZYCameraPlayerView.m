@@ -392,7 +392,6 @@ typedef NS_ENUM(NSUInteger, ZYVideoOrientation) {
             NSTimeInterval duration = CMTimeGetSeconds(strongSelf->_playerItem.duration);
             strongSelf.currentTime = currentTime;
             strongSelf.totalDuration = duration;
-            NSLog(@"play time changed %f %f", currentTime, duration);
             if(strongSelf.timeDidChanged) {
                 strongSelf.timeDidChanged(strongSelf.currentTime, duration);
             }

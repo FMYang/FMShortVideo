@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-message Feed {
-  double status_code = 1;
-  double min_cursor = 2;
-  double max_cursor = 3;
-  double has_more = 4;
-}

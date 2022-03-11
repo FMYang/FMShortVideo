@@ -17,9 +17,12 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param params 参数
 /// @param success 成功回调
 /// @param fail 失败回调
-+ (void)fetchList:(NSDictionary *)params
-          success:(FMSuccessBlock(NSArray<VideoModel *> *))success
-             fail:(FMFailBlock)fail;
+//+ (void)fetchList:(NSDictionary *)params
+//          success:(FMSuccessBlock(NSArray<VideoModel *> *))success
+//             fail:(FMFailBlock)fail;
+
+//
++ (void)fetchList:(NSDictionary *)params success:(void(^)(NSArray<VideoModel *> *))success fail:(dispatch_block_t)fail;
 
 @end
 

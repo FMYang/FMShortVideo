@@ -10,14 +10,8 @@
 #import "VideoCell.h"
 #import "FMPlayerView.h"
 #import "ZYCameraPlayerView.h"
-
-#import "DouyinService.h"
-
-#import "DouyinFeedMin.pbobjc.h"
-#import "Person.pbobjc.h"
-
-#import "FollowFeed.h"
 #import <MJExtension/MJExtension.h>
+#import <MJRefresh/MJRefresh.h>
 
 #define kScreenW UIScreen.mainScreen.bounds.size.width
 #define kScreenH UIScreen.mainScreen.bounds.size.height
@@ -42,7 +36,6 @@
 
 #define kContentHeight (kScreenH - kTabBarHeight)
 
-static const int pageSize = 20;
 
 @interface HomeVC () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 @property (nonatomic, assign) NSInteger page;
@@ -52,8 +45,6 @@ static const int pageSize = 20;
 @property (nonatomic, assign) NSInteger currentIndex;
 @property (nonatomic, assign) NSInteger beginScrollIndex;
 @property (nonatomic, assign) CGFloat velocity;
-
-@property (nonatomic, strong) FollowFeed *followFeed;
 @end
 
 @implementation HomeVC
@@ -70,49 +61,15 @@ static const int pageSize = 20;
     
     [self setupUI];
     
-//    [self readLocalData];
-    
     dispatch_after(DISPATCH_TIME_NOW + 0.25, dispatch_get_main_queue(), ^{
         [self fetchData];
     });
-    
-//    [DouyinService getDouyinRecommendList];
-    
-//    [self paraseDouyinData];
 }
 
 - (void)networkDidChange {
     if(AFNetworkReachabilityManager.sharedManager.reachable) {
         self.playerView.videoUrl = self.playerView.videoUrl;
     }
-}
-
-- (void)paraseDouyinData {
-    NSString *documentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES).firstObject;
-    NSString *path = [documentPath stringByAppendingPathComponent:@"douyin.protobuf"];
-    NSData *data = [[NSFileManager defaultManager] contentsAtPath:path];
-    NSLog(@"%ld", data.length);
-
-    NSError *err;
-    Feed *feed = [Feed parseFromData:data error:&err];
-    if(err) {
-        NSLog(@"解析失败");
-    } else {
-        NSLog(@"解析成功");
-    }
-}
-
-- (FollowFeed *)readLocalData {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"douyin_userVideo" ofType:nil];
-    NSData *data = [[NSFileManager defaultManager] contentsAtPath:path];
-    FollowFeed *feed = [FollowFeed mj_objectWithKeyValues:data];
-    
-    for(FeedList *item in feed.data) {
-        NSLog(@"%@", item.aweme.video.play_addr.url_list[0]);
-    }
-    
-    self.followFeed = feed;
-    return feed;
 }
 
 - (void)networkAuthSuccess {
@@ -126,43 +83,74 @@ static const int pageSize = 20;
 
 #pragma mark - private method
 - (void)fetchData {
-    NSDictionary *params = @{@"page": @(self.page),
-                             @"count": @(pageSize),
-                             @"type": @"video"};
+    NSLog(@"fm fetchData %d", self.page);
+
+    /**
+     https://nine.ifeng.com/vappRecomlist?id=VIDEOSHORTPLAY&ch=vch_sv_edit&action=up&pullNum=10&pullTotal=7&ts=2022-03-11%2011%3A40%3A35&gv=7.27.1&adgv=7.27.5&av=0&proid=ifengvideo&os=ios_14.6&df=iPhone12%2C1&vt=5&screen=828x1792&publishid=4002&uid=12463ffc5c4044d48979ce25e953f82d&nw=wifi&st=16469700351542&sn=47109890e707a2642f3dc10475435e90
+     */
+    NSDictionary *params = @{@"id": @"VIDEOSHORTPLAY",
+                             @"ch": @"vch_sv_edit",
+                             @"action": @"up",
+                             @"pullNum": @(self.page),
+                             @"pullTotal": @(self.page),
+                             @"ts": @"2022-03-11%2011%3A40%3A35",
+                             @"gv": @"7.27.1",
+                             @"adgv": @"7.27.1",
+                             @"av": @"0",
+                             @"proid": @"ifengvideo",
+                             @"os": @"ios_14.6",
+                             @"df": @"iPhone12%2C1",
+                             @"vt": @"5",
+                             @"screen": @"828x1792",
+                             @"publishid": @"4002",
+                             @"uid": @"12463ffc5c4044d48979ce25e953f82d",
+                             @"nw": @"nv",
+                             @"st": @"16469700351542",
+                             @"sn": @"47109890e707a2642f3dc10475435e90"};
     
-    [HomeNetwork fetchList:params success:^(NSArray<VideoModel *> * _Nonnull result, FMResponse * _Nonnull response) {
-        [self.dataSource removeAllObjects];
-        [self.dataSource addObjectsFromArray:result];
+    [HomeNetwork fetchList:params success:^(NSArray<VideoModel *> *items) {
+        [self.dataSource addObjectsFromArray:items];
         [self.listTableView reloadData];
-        [self playVideo:0]; // 请求完成播放第0个视频
-    } fail:^(FMError * _Nonnull error) {
-        NSString *errmsg = @"";
-        switch (error.reason) {
-            case FMErrorReasonNetworkLost:
-                errmsg = @"没有网络";
-                break;
-                
-            case FMErrorReasonDataIsNil:
-                errmsg = @"没有数据";
-                break;
-                
-            case FMErrorReasonClientError:
-                errmsg = @"客户端错误";
-                break;
-                
-            case FMErrorReasonServiceError:
-                errmsg = @"服务端错误";
-                break;
-                
-            case FMErrorReasonTimeout:
-                errmsg = @"请求超时";
-                break;
-                
-            default:
-                break;
+        if(self.page == 1) {
+            [self playVideo:0]; // 请求完成播放第0个视频
         }
-        NSLog(@"%@", errmsg);
+    } fail:^{
+        NSLog(@"error");
     }];
+    
+//    [HomeNetwork fetchList:params success:^(NSArray<VideoModel *> * _Nonnull result, FMResponse * _Nonnull response) {
+//        [self.dataSource removeAllObjects];
+//        [self.dataSource addObjectsFromArray:result];
+//        [self.listTableView reloadData];
+//        [self playVideo:0]; // 请求完成播放第0个视频
+//    } fail:^(FMError * _Nonnull error) {
+//        NSString *errmsg = @"";
+//        switch (error.reason) {
+//            case FMErrorReasonNetworkLost:
+//                errmsg = @"没有网络";
+//                break;
+//
+//            case FMErrorReasonDataIsNil:
+//                errmsg = @"没有数据";
+//                break;
+//
+//            case FMErrorReasonClientError:
+//                errmsg = @"客户端错误";
+//                break;
+//
+//            case FMErrorReasonServiceError:
+//                errmsg = @"服务端错误";
+//                break;
+//
+//            case FMErrorReasonTimeout:
+//                errmsg = @"请求超时";
+//                break;
+//
+//            default:
+//                break;
+//        }
+//        NSLog(@"%@", errmsg);
+//    }];
 }
 
 #pragma mark - UITableViewDelegate, UITableViewDataSource
@@ -189,11 +177,14 @@ static const int pageSize = 20;
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    NSLog(@"fm === %@", NSStringFromCGSize(scrollView.contentSize));
     BOOL stopped = !scrollView.isDragging && !scrollView.isDecelerating && !scrollView.isTracking;
     if(stopped) {
         self.currentIndex = ceil((scrollView.contentOffset.y / kContentHeight));
         if(self.currentIndex != self.beginScrollIndex) {
-        [self playVideo:self.currentIndex]; // 滑动停止播放当前视频
+            if(self.currentIndex < self.dataSource.count) {
+                [self playVideo:self.currentIndex]; // 滑动停止播放当前视频
+            }
         }
     }
 }
@@ -207,14 +198,7 @@ static const int pageSize = 20;
     [cell.contentView insertSubview:self.playerView atIndex:1];
     
     VideoModel *model = self.dataSource[row];
-    NSString *videoPath = model.video;
-    
-    if(row < self.followFeed.data.count) {
-        NSLog(@"xxxxxx");
-        videoPath = self.followFeed.data[row].aweme.video.play_addr.url_list[1];
-    }
-    
-    NSLog(@"%@", videoPath);
+    NSString *videoPath = model.videoPlayUrl;
 
     AVURLAsset *asset = [AVURLAsset assetWithURL:[NSURL URLWithString:videoPath]];
     self.playerView.asset = asset;
@@ -254,6 +238,16 @@ static const int pageSize = 20;
         _listTableView.showsHorizontalScrollIndicator = NO;
         _listTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [_listTableView registerClass:VideoCell.class forCellReuseIdentifier:NSStringFromClass(VideoCell.class)];
+        
+        __weak typeof(self) weakSelf = self;
+        MJRefreshAutoFooter *footer = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
+            weakSelf.page += 1;
+            [weakSelf fetchData];
+            [weakSelf.listTableView.mj_footer endRefreshing];
+        }];
+        footer.triggerAutomaticallyRefreshPercent = -0.5;
+        footer.autoTriggerTimes = -1;
+        self.listTableView.mj_footer = footer;
     }
     return _listTableView;
 }

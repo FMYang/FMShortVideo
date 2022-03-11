@@ -11,6 +11,5 @@ target 'FMShortVideo' do
    
    pod 'SDWebImage'
 
-   pod 'Protobuf'
-   
+   pod 'MJRefresh'
 end

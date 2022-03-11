@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		889123ED2541F1720024E049 /* douyin_feed.proto in Sources */ = {isa = PBXBuildFile; fileRef = 889123EB2541F1720024E049 /* douyin_feed.proto */; };
-		889123EE2541F1720024E049 /* douyin_feed in Resources */ = {isa = PBXBuildFile; fileRef = 889123EC2541F1720024E049 /* douyin_feed */; };
 		DD6845058E62341EC8E8A03B /* libPods-FMShortVideo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C004F412050BC91AE8296B3D /* libPods-FMShortVideo.a */; };
 		E44EA1D425BAD2FA0017FF30 /* ZYCameraPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E44EA1D325BAD2FA0017FF30 /* ZYCameraPlayerView.m */; };
 		E4B76CF5253EBC4E00501F05 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B76CF4253EBC4E00501F05 /* AppDelegate.m */; };
@@ -21,21 +19,9 @@
 		E4B76D35253EC8BA00501F05 /* VideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B76D34253EC8BA00501F05 /* VideoModel.m */; };
 		E4B76D3F253ECC9C00501F05 /* VideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B76D3E253ECC9C00501F05 /* VideoCell.m */; };
 		E4B76D4F253ED85600501F05 /* FMPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B76D4E253ED85600501F05 /* FMPlayerView.m */; };
-		E4B76D6525418E6A00501F05 /* DouyinService.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B76D6425418E6900501F05 /* DouyinService.m */; };
-		E4B76D822542740000501F05 /* douyin_feed_min.proto in Sources */ = {isa = PBXBuildFile; fileRef = E4B76D812542740000501F05 /* douyin_feed_min.proto */; };
-		E4B76D86254274B300501F05 /* DouyinFeedMin.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B76D84254274B300501F05 /* DouyinFeedMin.pbobjc.m */; };
-		E4B76D8A2542765B00501F05 /* JQKProtobufResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B76D892542765B00501F05 /* JQKProtobufResponseSerializer.m */; };
-		E4B76D99254293A200501F05 /* person.proto in Sources */ = {isa = PBXBuildFile; fileRef = E4B76D98254293A200501F05 /* person.proto */; };
-		E4B76D9D254293EE00501F05 /* Person.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B76D9B254293EE00501F05 /* Person.pbobjc.m */; };
-		E4B76DA42542CA8A00501F05 /* douyin_userVideo in Resources */ = {isa = PBXBuildFile; fileRef = E4B76DA32542CA8A00501F05 /* douyin_userVideo */; };
-		E4B76DA82542CD8F00501F05 /* follow_feed in Resources */ = {isa = PBXBuildFile; fileRef = E4B76DA72542CD8F00501F05 /* follow_feed */; };
-		E4B76DAE2542DE3900501F05 /* FollowFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B76DAD2542DE3900501F05 /* FollowFeed.m */; };
-		E4B76DB32546613700501F05 /* douyin.protobuf in Resources */ = {isa = PBXBuildFile; fileRef = E4B76DB22546613600501F05 /* douyin.protobuf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		889123EB2541F1720024E049 /* douyin_feed.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = douyin_feed.proto; sourceTree = "<group>"; };
-		889123EC2541F1720024E049 /* douyin_feed */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = douyin_feed; sourceTree = "<group>"; };
 		89F7A8AC1E5EE673DBCF46E3 /* Pods-FMShortVideo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMShortVideo.debug.xcconfig"; path = "Target Support Files/Pods-FMShortVideo/Pods-FMShortVideo.debug.xcconfig"; sourceTree = "<group>"; };
 		9861238F409EB91114551610 /* Pods-FMShortVideo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMShortVideo.release.xcconfig"; path = "Target Support Files/Pods-FMShortVideo/Pods-FMShortVideo.release.xcconfig"; sourceTree = "<group>"; };
 		C004F412050BC91AE8296B3D /* libPods-FMShortVideo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FMShortVideo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,21 +47,6 @@
 		E4B76D41253ECCDA00501F05 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		E4B76D4D253ED85600501F05 /* FMPlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMPlayerView.h; sourceTree = "<group>"; };
 		E4B76D4E253ED85600501F05 /* FMPlayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMPlayerView.m; sourceTree = "<group>"; };
-		E4B76D6325418E6900501F05 /* DouyinService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DouyinService.h; sourceTree = "<group>"; };
-		E4B76D6425418E6900501F05 /* DouyinService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DouyinService.m; sourceTree = "<group>"; };
-		E4B76D812542740000501F05 /* douyin_feed_min.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = douyin_feed_min.proto; sourceTree = "<group>"; };
-		E4B76D84254274B300501F05 /* DouyinFeedMin.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DouyinFeedMin.pbobjc.m; sourceTree = "<group>"; };
-		E4B76D85254274B300501F05 /* DouyinFeedMin.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DouyinFeedMin.pbobjc.h; sourceTree = "<group>"; };
-		E4B76D882542765B00501F05 /* JQKProtobufResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQKProtobufResponseSerializer.h; sourceTree = "<group>"; };
-		E4B76D892542765B00501F05 /* JQKProtobufResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQKProtobufResponseSerializer.m; sourceTree = "<group>"; };
-		E4B76D98254293A200501F05 /* person.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = person.proto; sourceTree = "<group>"; };
-		E4B76D9B254293EE00501F05 /* Person.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.pbobjc.m; sourceTree = "<group>"; };
-		E4B76D9C254293EE00501F05 /* Person.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.pbobjc.h; sourceTree = "<group>"; };
-		E4B76DA32542CA8A00501F05 /* douyin_userVideo */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = douyin_userVideo; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
-		E4B76DA72542CD8F00501F05 /* follow_feed */ = {isa = PBXFileReference; lastKnownFileType = text; path = follow_feed; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
-		E4B76DAC2542DE3900501F05 /* FollowFeed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FollowFeed.h; sourceTree = "<group>"; };
-		E4B76DAD2542DE3900501F05 /* FollowFeed.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FollowFeed.m; sourceTree = "<group>"; };
-		E4B76DB22546613600501F05 /* douyin.protobuf */ = {isa = PBXFileReference; lastKnownFileType = file; path = douyin.protobuf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,24 +68,6 @@
 				9861238F409EB91114551610 /* Pods-FMShortVideo.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		889123EA2541F1720024E049 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				E4B76DB22546613600501F05 /* douyin.protobuf */,
-				E4B76D9C254293EE00501F05 /* Person.pbobjc.h */,
-				E4B76D9B254293EE00501F05 /* Person.pbobjc.m */,
-				E4B76D98254293A200501F05 /* person.proto */,
-				E4B76D85254274B300501F05 /* DouyinFeedMin.pbobjc.h */,
-				E4B76D84254274B300501F05 /* DouyinFeedMin.pbobjc.m */,
-				E4B76D812542740000501F05 /* douyin_feed_min.proto */,
-				889123EB2541F1720024E049 /* douyin_feed.proto */,
-				889123EC2541F1720024E049 /* douyin_feed */,
-				E4B76DA32542CA8A00501F05 /* douyin_userVideo */,
-				E4B76DA72542CD8F00501F05 /* follow_feed */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		AA5B5900CEA9BF47C6F737A3 /* Frameworks */ = {
@@ -149,7 +102,6 @@
 				E4B76D24253EC51600501F05 /* NetworkPlugin */,
 				E4B76D14253EBCA300501F05 /* Entry */,
 				E4B76D0E253EBC6D00501F05 /* Src */,
-				889123EA2541F1720024E049 /* Resources */,
 				E4B76D13253EBC9200501F05 /* SupportingFiles */,
 			);
 			path = FMShortVideo;
@@ -224,7 +176,6 @@
 		E4B76D24253EC51600501F05 /* NetworkPlugin */ = {
 			isa = PBXGroup;
 			children = (
-				E4B76D6225418E4E00501F05 /* Douyin */,
 				E4B76D27253EC71400501F05 /* FMParse.h */,
 				E4B76D26253EC71400501F05 /* FMParse.m */,
 			);
@@ -253,19 +204,6 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
-		E4B76D6225418E4E00501F05 /* Douyin */ = {
-			isa = PBXGroup;
-			children = (
-				E4B76D882542765B00501F05 /* JQKProtobufResponseSerializer.h */,
-				E4B76D892542765B00501F05 /* JQKProtobufResponseSerializer.m */,
-				E4B76D6325418E6900501F05 /* DouyinService.h */,
-				E4B76D6425418E6900501F05 /* DouyinService.m */,
-				E4B76DAC2542DE3900501F05 /* FollowFeed.h */,
-				E4B76DAD2542DE3900501F05 /* FollowFeed.m */,
-			);
-			path = Douyin;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -277,6 +215,7 @@
 				E4B76CEC253EBC4E00501F05 /* Sources */,
 				E4B76CED253EBC4E00501F05 /* Frameworks */,
 				E4B76CEE253EBC4E00501F05 /* Resources */,
+				B8AB121A735A750C0824CE54 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -324,11 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4B76D03253EBC5300501F05 /* LaunchScreen.storyboard in Resources */,
-				E4B76DA42542CA8A00501F05 /* douyin_userVideo in Resources */,
-				E4B76DB32546613700501F05 /* douyin.protobuf in Resources */,
-				E4B76DA82542CD8F00501F05 /* follow_feed in Resources */,
 				E4B76D00253EBC5300501F05 /* Assets.xcassets in Resources */,
-				889123EE2541F1720024E049 /* douyin_feed in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +292,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B8AB121A735A750C0824CE54 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FMShortVideo/Pods-FMShortVideo-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FMShortVideo/Pods-FMShortVideo-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FMShortVideo/Pods-FMShortVideo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -365,19 +317,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4B76D1B253EBDD000501F05 /* HomeVC.m in Sources */,
-				E4B76D6525418E6A00501F05 /* DouyinService.m in Sources */,
 				E4B76D3F253ECC9C00501F05 /* VideoCell.m in Sources */,
-				E4B76D8A2542765B00501F05 /* JQKProtobufResponseSerializer.m in Sources */,
-				E4B76D86254274B300501F05 /* DouyinFeedMin.pbobjc.m in Sources */,
-				E4B76DAE2542DE3900501F05 /* FollowFeed.m in Sources */,
 				E4B76D31253EC7BE00501F05 /* HomeNetwork.m in Sources */,
 				E4B76CF5253EBC4E00501F05 /* AppDelegate.m in Sources */,
 				E4B76D4F253ED85600501F05 /* FMPlayerView.m in Sources */,
-				E4B76D9D254293EE00501F05 /* Person.pbobjc.m in Sources */,
-				889123ED2541F1720024E049 /* douyin_feed.proto in Sources */,
-				E4B76D99254293A200501F05 /* person.proto in Sources */,
 				E4B76D28253EC71400501F05 /* FMParse.m in Sources */,
-				E4B76D822542740000501F05 /* douyin_feed_min.proto in Sources */,
 				E4B76D06253EBC5300501F05 /* main.m in Sources */,
 				E4B76D35253EC8BA00501F05 /* VideoModel.m in Sources */,
 				E44EA1D425BAD2FA0017FF30 /* ZYCameraPlayerView.m in Sources */,
