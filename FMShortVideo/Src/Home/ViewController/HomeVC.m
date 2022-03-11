@@ -83,8 +83,6 @@
 
 #pragma mark - private method
 - (void)fetchData {
-    NSLog(@"fm fetchData %d", self.page);
-
     /**
      https://nine.ifeng.com/vappRecomlist?id=VIDEOSHORTPLAY&ch=vch_sv_edit&action=up&pullNum=10&pullTotal=7&ts=2022-03-11%2011%3A40%3A35&gv=7.27.1&adgv=7.27.5&av=0&proid=ifengvideo&os=ios_14.6&df=iPhone12%2C1&vt=5&screen=828x1792&publishid=4002&uid=12463ffc5c4044d48979ce25e953f82d&nw=wifi&st=16469700351542&sn=47109890e707a2642f3dc10475435e90
      */
@@ -114,7 +112,9 @@
         if(self.page == 1) {
             [self playVideo:0]; // 请求完成播放第0个视频
         }
+        [self.listTableView.mj_footer endRefreshing];
     } fail:^{
+        [self.listTableView.mj_footer endRefreshing];
         NSLog(@"error");
     }];
     
@@ -177,7 +177,6 @@
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    NSLog(@"fm === %@", NSStringFromCGSize(scrollView.contentSize));
     BOOL stopped = !scrollView.isDragging && !scrollView.isDecelerating && !scrollView.isTracking;
     if(stopped) {
         self.currentIndex = ceil((scrollView.contentOffset.y / kContentHeight));
@@ -238,14 +237,14 @@
         _listTableView.showsHorizontalScrollIndicator = NO;
         _listTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [_listTableView registerClass:VideoCell.class forCellReuseIdentifier:NSStringFromClass(VideoCell.class)];
+        _listTableView.estimatedRowHeight= 0; // 上拉后偏移的问题修复
         
         __weak typeof(self) weakSelf = self;
         MJRefreshAutoFooter *footer = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
             weakSelf.page += 1;
             [weakSelf fetchData];
-            [weakSelf.listTableView.mj_footer endRefreshing];
         }];
-        footer.triggerAutomaticallyRefreshPercent = -0.5;
+        footer.triggerAutomaticallyRefreshPercent = 0.1;
         footer.autoTriggerTimes = -1;
         self.listTableView.mj_footer = footer;
     }
